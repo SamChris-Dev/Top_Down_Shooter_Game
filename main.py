@@ -11,6 +11,7 @@ pygame.display.set_caption("Pygame 3.13 Test Success!")
 # 3. Colors (RGB)
 BLUE = (30, 144, 255)
 WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 
 # 4. The Game Loop
 running = True
@@ -24,7 +25,7 @@ while running:
     screen.fill(BLUE)
 
     # Draw a simple shape (Surface, Color, [x, y, width, height])
-    pygame.draw.rect(screen, WHITE, [350, 250, 100, 100])
+    pygame.draw.rect(screen, RED, [350, 250, 100, 100])
 
     # Update the display
     pygame.display.flip()
