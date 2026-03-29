@@ -1,7 +1,7 @@
 # ignore all pycharm idea files
 .idea/
 
-# ignore all venv files
+# ignore all venv
 venv/
 
 # Ignore Python cache files
