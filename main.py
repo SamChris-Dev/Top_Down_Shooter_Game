@@ -6,7 +6,7 @@ pygame.init()
 
 # 2. Set up the display (Width, Height)
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Pygame 3.13 Test Success!")
+pygame.display.set_caption("Top-Down-Shooter!")
 
 # 3. Colors (RGB)
 BLUE = (30, 144, 255)
