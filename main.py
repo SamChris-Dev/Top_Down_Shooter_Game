@@ -25,7 +25,7 @@ while running:
     screen.fill(BLUE)
 
     # Draw a simple shape (Surface, Color, [x, y, width, height])
-    pygame.draw.rect(screen, RED, [350, 250, 100, 100])
+    pygame.draw.rect(screen, WHITE, [350, 250, 100, 100])
 
     # Update the display
     pygame.display.flip()
