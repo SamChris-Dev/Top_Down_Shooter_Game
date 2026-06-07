@@ -1,133 +1,1760 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="40" height="25" tilewidth="64" tileheight="64" infinite="0" nextlayerid="8" nextobjectid="35">
- <tileset firstgid="1" name="Tiles" tilewidth="64" tileheight="64" tilecount="1" columns="0">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="25">
+ <tileset firstgid="1" name="Tiles" tilewidth="64" tileheight="64" tilecount="510" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image source="PNG/Tiles/tile_01.png" width="64" height="64"/>
   </tile>
+  <tile id="1">
+   <image source="PNG/Tiles/tile_02.png" width="64" height="64"/>
+  </tile>
+  <tile id="2">
+   <image source="PNG/Tiles/tile_03.png" width="64" height="64"/>
+  </tile>
+  <tile id="3">
+   <image source="PNG/Tiles/tile_04.png" width="64" height="64"/>
+  </tile>
+  <tile id="4">
+   <image source="PNG/Tiles/tile_05.png" width="64" height="64"/>
+  </tile>
+  <tile id="5">
+   <image source="PNG/Tiles/tile_06.png" width="64" height="64"/>
+  </tile>
+  <tile id="6">
+   <image source="PNG/Tiles/tile_07.png" width="64" height="64"/>
+  </tile>
+  <tile id="7">
+   <image source="PNG/Tiles/tile_08.png" width="64" height="64"/>
+  </tile>
+  <tile id="8">
+   <image source="PNG/Tiles/tile_09.png" width="64" height="64"/>
+  </tile>
+  <tile id="9">
+   <image source="PNG/Tiles/tile_10.png" width="64" height="64"/>
+  </tile>
+  <tile id="10">
+   <image source="PNG/Tiles/tile_11.png" width="64" height="64"/>
+  </tile>
+  <tile id="11">
+   <image source="PNG/Tiles/tile_12.png" width="64" height="64"/>
+  </tile>
+  <tile id="12">
+   <image source="PNG/Tiles/tile_13.png" width="64" height="64"/>
+  </tile>
+  <tile id="13">
+   <image source="PNG/Tiles/tile_14.png" width="64" height="64"/>
+  </tile>
+  <tile id="14">
+   <image source="PNG/Tiles/tile_15.png" width="64" height="64"/>
+  </tile>
+  <tile id="15">
+   <image source="PNG/Tiles/tile_16.png" width="64" height="64"/>
+  </tile>
+  <tile id="16">
+   <image source="PNG/Tiles/tile_17.png" width="64" height="64"/>
+  </tile>
+  <tile id="17">
+   <image source="PNG/Tiles/tile_18.png" width="64" height="64"/>
+  </tile>
+  <tile id="18">
+   <image source="PNG/Tiles/tile_19.png" width="64" height="64"/>
+  </tile>
+  <tile id="19">
+   <image source="PNG/Tiles/tile_20.png" width="64" height="64"/>
+  </tile>
+  <tile id="20">
+   <image source="PNG/Tiles/tile_21.png" width="64" height="64"/>
+  </tile>
+  <tile id="21">
+   <image source="PNG/Tiles/tile_22.png" width="64" height="64"/>
+  </tile>
+  <tile id="22">
+   <image source="PNG/Tiles/tile_23.png" width="64" height="64"/>
+  </tile>
+  <tile id="23">
+   <image source="PNG/Tiles/tile_24.png" width="64" height="64"/>
+  </tile>
+  <tile id="24">
+   <image source="PNG/Tiles/tile_25.png" width="64" height="64"/>
+  </tile>
+  <tile id="25">
+   <image source="PNG/Tiles/tile_26.png" width="64" height="64"/>
+  </tile>
+  <tile id="27">
+   <image source="PNG/Tiles/tile_28.png" width="64" height="64"/>
+  </tile>
+  <tile id="28">
+   <image source="PNG/Tiles/tile_29.png" width="64" height="64"/>
+  </tile>
+  <tile id="29">
+   <image source="PNG/Tiles/tile_30.png" width="64" height="64"/>
+  </tile>
+  <tile id="30">
+   <image source="PNG/Tiles/tile_31.png" width="64" height="64"/>
+  </tile>
+  <tile id="31">
+   <image source="PNG/Tiles/tile_32.png" width="64" height="64"/>
+  </tile>
+  <tile id="32">
+   <image source="PNG/Tiles/tile_33.png" width="64" height="64"/>
+  </tile>
+  <tile id="33">
+   <image source="PNG/Tiles/tile_34.png" width="64" height="64"/>
+  </tile>
+  <tile id="34">
+   <image source="PNG/Tiles/tile_35.png" width="64" height="64"/>
+  </tile>
+  <tile id="35">
+   <image source="PNG/Tiles/tile_36.png" width="64" height="64"/>
+  </tile>
+  <tile id="36">
+   <image source="PNG/Tiles/tile_37.png" width="64" height="64"/>
+  </tile>
+  <tile id="37">
+   <image source="PNG/Tiles/tile_38.png" width="64" height="64"/>
+  </tile>
+  <tile id="38">
+   <image source="PNG/Tiles/tile_39.png" width="64" height="64"/>
+  </tile>
+  <tile id="39">
+   <image source="PNG/Tiles/tile_40.png" width="64" height="64"/>
+  </tile>
+  <tile id="40">
+   <image source="PNG/Tiles/tile_41.png" width="64" height="64"/>
+  </tile>
+  <tile id="41">
+   <image source="PNG/Tiles/tile_42.png" width="64" height="64"/>
+  </tile>
+  <tile id="42">
+   <image source="PNG/Tiles/tile_43.png" width="64" height="64"/>
+  </tile>
+  <tile id="43">
+   <image source="PNG/Tiles/tile_44.png" width="64" height="64"/>
+  </tile>
+  <tile id="44">
+   <image source="PNG/Tiles/tile_45.png" width="64" height="64"/>
+  </tile>
+  <tile id="45">
+   <image source="PNG/Tiles/tile_46.png" width="64" height="64"/>
+  </tile>
+  <tile id="46">
+   <image source="PNG/Tiles/tile_47.png" width="64" height="64"/>
+  </tile>
+  <tile id="47">
+   <image source="PNG/Tiles/tile_48.png" width="64" height="64"/>
+  </tile>
+  <tile id="48">
+   <image source="PNG/Tiles/tile_49.png" width="64" height="64"/>
+  </tile>
+  <tile id="49">
+   <image source="PNG/Tiles/tile_50.png" width="64" height="64"/>
+  </tile>
+  <tile id="50">
+   <image source="PNG/Tiles/tile_51.png" width="64" height="64"/>
+  </tile>
+  <tile id="51">
+   <image source="PNG/Tiles/tile_52.png" width="64" height="64"/>
+  </tile>
+  <tile id="52">
+   <image source="PNG/Tiles/tile_53.png" width="64" height="64"/>
+  </tile>
+  <tile id="54">
+   <image source="PNG/Tiles/tile_55.png" width="64" height="64"/>
+  </tile>
+  <tile id="55">
+   <image source="PNG/Tiles/tile_56.png" width="64" height="64"/>
+  </tile>
+  <tile id="56">
+   <image source="PNG/Tiles/tile_57.png" width="64" height="64"/>
+  </tile>
+  <tile id="57">
+   <image source="PNG/Tiles/tile_58.png" width="64" height="64"/>
+  </tile>
+  <tile id="58">
+   <image source="PNG/Tiles/tile_59.png" width="64" height="64"/>
+  </tile>
+  <tile id="59">
+   <image source="PNG/Tiles/tile_60.png" width="64" height="64"/>
+  </tile>
+  <tile id="60">
+   <image source="PNG/Tiles/tile_61.png" width="64" height="64"/>
+  </tile>
+  <tile id="61">
+   <image source="PNG/Tiles/tile_62.png" width="64" height="64"/>
+  </tile>
+  <tile id="62">
+   <image source="PNG/Tiles/tile_63.png" width="64" height="64"/>
+  </tile>
+  <tile id="63">
+   <image source="PNG/Tiles/tile_64.png" width="64" height="64"/>
+  </tile>
+  <tile id="64">
+   <image source="PNG/Tiles/tile_65.png" width="64" height="64"/>
+  </tile>
+  <tile id="65">
+   <image source="PNG/Tiles/tile_66.png" width="64" height="64"/>
+  </tile>
+  <tile id="66">
+   <image source="PNG/Tiles/tile_67.png" width="64" height="64"/>
+  </tile>
+  <tile id="67">
+   <image source="PNG/Tiles/tile_68.png" width="64" height="64"/>
+  </tile>
+  <tile id="68">
+   <image source="PNG/Tiles/tile_69.png" width="64" height="64"/>
+  </tile>
+  <tile id="69">
+   <image source="PNG/Tiles/tile_70.png" width="64" height="64"/>
+  </tile>
+  <tile id="70">
+   <image source="PNG/Tiles/tile_71.png" width="64" height="64"/>
+  </tile>
+  <tile id="71">
+   <image source="PNG/Tiles/tile_72.png" width="64" height="64"/>
+  </tile>
+  <tile id="72">
+   <image source="PNG/Tiles/tile_73.png" width="64" height="64"/>
+  </tile>
+  <tile id="73">
+   <image source="PNG/Tiles/tile_74.png" width="64" height="64"/>
+  </tile>
+  <tile id="74">
+   <image source="PNG/Tiles/tile_75.png" width="64" height="64"/>
+  </tile>
+  <tile id="75">
+   <image source="PNG/Tiles/tile_76.png" width="64" height="64"/>
+  </tile>
+  <tile id="76">
+   <image source="PNG/Tiles/tile_77.png" width="64" height="64"/>
+  </tile>
+  <tile id="77">
+   <image source="PNG/Tiles/tile_78.png" width="64" height="64"/>
+  </tile>
+  <tile id="78">
+   <image source="PNG/Tiles/tile_79.png" width="64" height="64"/>
+  </tile>
+  <tile id="79">
+   <image source="PNG/Tiles/tile_80.png" width="64" height="64"/>
+  </tile>
+  <tile id="81">
+   <image source="PNG/Tiles/tile_82.png" width="64" height="64"/>
+  </tile>
+  <tile id="82">
+   <image source="PNG/Tiles/tile_83.png" width="64" height="64"/>
+  </tile>
+  <tile id="83">
+   <image source="PNG/Tiles/tile_84.png" width="64" height="64"/>
+  </tile>
+  <tile id="84">
+   <image source="PNG/Tiles/tile_85.png" width="64" height="64"/>
+  </tile>
+  <tile id="85">
+   <image source="PNG/Tiles/tile_86.png" width="64" height="64"/>
+  </tile>
+  <tile id="86">
+   <image source="PNG/Tiles/tile_87.png" width="64" height="64"/>
+  </tile>
+  <tile id="87">
+   <image source="PNG/Tiles/tile_88.png" width="64" height="64"/>
+  </tile>
+  <tile id="88">
+   <image source="PNG/Tiles/tile_89.png" width="64" height="64"/>
+  </tile>
+  <tile id="89">
+   <image source="PNG/Tiles/tile_90.png" width="64" height="64"/>
+  </tile>
+  <tile id="90">
+   <image source="PNG/Tiles/tile_91.png" width="64" height="64"/>
+  </tile>
+  <tile id="91">
+   <image source="PNG/Tiles/tile_92.png" width="64" height="64"/>
+  </tile>
+  <tile id="92">
+   <image source="PNG/Tiles/tile_93.png" width="64" height="64"/>
+  </tile>
+  <tile id="93">
+   <image source="PNG/Tiles/tile_94.png" width="64" height="64"/>
+  </tile>
+  <tile id="94">
+   <image source="PNG/Tiles/tile_95.png" width="64" height="64"/>
+  </tile>
+  <tile id="95">
+   <image source="PNG/Tiles/tile_96.png" width="64" height="64"/>
+  </tile>
+  <tile id="96">
+   <image source="PNG/Tiles/tile_97.png" width="64" height="64"/>
+  </tile>
+  <tile id="97">
+   <image source="PNG/Tiles/tile_98.png" width="64" height="64"/>
+  </tile>
+  <tile id="98">
+   <image source="PNG/Tiles/tile_99.png" width="64" height="64"/>
+  </tile>
+  <tile id="99">
+   <image source="PNG/Tiles/tile_100.png" width="64" height="64"/>
+  </tile>
+  <tile id="100">
+   <image source="PNG/Tiles/tile_101.png" width="64" height="64"/>
+  </tile>
+  <tile id="101">
+   <image source="PNG/Tiles/tile_102.png" width="64" height="64"/>
+  </tile>
+  <tile id="102">
+   <image source="PNG/Tiles/tile_103.png" width="64" height="64"/>
+  </tile>
+  <tile id="103">
+   <image source="PNG/Tiles/tile_104.png" width="64" height="64"/>
+  </tile>
+  <tile id="104">
+   <image source="PNG/Tiles/tile_105.png" width="64" height="64"/>
+  </tile>
+  <tile id="105">
+   <image source="PNG/Tiles/tile_106.png" width="64" height="64"/>
+  </tile>
+  <tile id="106">
+   <image source="PNG/Tiles/tile_107.png" width="64" height="64"/>
+  </tile>
+  <tile id="108">
+   <image source="PNG/Tiles/tile_109.png" width="64" height="64"/>
+  </tile>
+  <tile id="109">
+   <image source="PNG/Tiles/tile_110.png" width="64" height="64"/>
+  </tile>
+  <tile id="110">
+   <image source="PNG/Tiles/tile_111.png" width="64" height="64"/>
+  </tile>
+  <tile id="111">
+   <image source="PNG/Tiles/tile_112.png" width="64" height="64"/>
+  </tile>
+  <tile id="112">
+   <image source="PNG/Tiles/tile_113.png" width="64" height="64"/>
+  </tile>
+  <tile id="113">
+   <image source="PNG/Tiles/tile_114.png" width="64" height="64"/>
+  </tile>
+  <tile id="114">
+   <image source="PNG/Tiles/tile_115.png" width="64" height="64"/>
+  </tile>
+  <tile id="115">
+   <image source="PNG/Tiles/tile_116.png" width="64" height="64"/>
+  </tile>
+  <tile id="116">
+   <image source="PNG/Tiles/tile_117.png" width="64" height="64"/>
+  </tile>
+  <tile id="117">
+   <image source="PNG/Tiles/tile_118.png" width="64" height="64"/>
+  </tile>
+  <tile id="118">
+   <image source="PNG/Tiles/tile_119.png" width="64" height="64"/>
+  </tile>
+  <tile id="119">
+   <image source="PNG/Tiles/tile_120.png" width="64" height="64"/>
+  </tile>
+  <tile id="120">
+   <image source="PNG/Tiles/tile_121.png" width="64" height="64"/>
+  </tile>
+  <tile id="121">
+   <image source="PNG/Tiles/tile_122.png" width="64" height="64"/>
+  </tile>
+  <tile id="122">
+   <image source="PNG/Tiles/tile_123.png" width="64" height="64"/>
+  </tile>
+  <tile id="123">
+   <image source="PNG/Tiles/tile_124.png" width="64" height="64"/>
+  </tile>
+  <tile id="124">
+   <image source="PNG/Tiles/tile_125.png" width="64" height="64"/>
+  </tile>
+  <tile id="125">
+   <image source="PNG/Tiles/tile_126.png" width="64" height="64"/>
+  </tile>
+  <tile id="126">
+   <image source="PNG/Tiles/tile_127.png" width="64" height="64"/>
+  </tile>
+  <tile id="127">
+   <image source="PNG/Tiles/tile_128.png" width="64" height="64"/>
+  </tile>
+  <tile id="128">
+   <image source="PNG/Tiles/tile_129.png" width="64" height="64"/>
+  </tile>
+  <tile id="129">
+   <image source="PNG/Tiles/tile_130.png" width="64" height="64"/>
+  </tile>
+  <tile id="130">
+   <image source="PNG/Tiles/tile_131.png" width="64" height="64"/>
+  </tile>
+  <tile id="131">
+   <image source="PNG/Tiles/tile_132.png" width="64" height="64"/>
+  </tile>
+  <tile id="132">
+   <image source="PNG/Tiles/tile_133.png" width="64" height="64"/>
+  </tile>
+  <tile id="133">
+   <image source="PNG/Tiles/tile_134.png" width="64" height="64"/>
+  </tile>
+  <tile id="135">
+   <image source="PNG/Tiles/tile_136.png" width="64" height="64"/>
+  </tile>
+  <tile id="136">
+   <image source="PNG/Tiles/tile_137.png" width="64" height="64"/>
+  </tile>
+  <tile id="137">
+   <image source="PNG/Tiles/tile_138.png" width="64" height="64"/>
+  </tile>
+  <tile id="138">
+   <image source="PNG/Tiles/tile_139.png" width="64" height="64"/>
+  </tile>
+  <tile id="139">
+   <image source="PNG/Tiles/tile_140.png" width="64" height="64"/>
+  </tile>
+  <tile id="140">
+   <image source="PNG/Tiles/tile_141.png" width="64" height="64"/>
+  </tile>
+  <tile id="141">
+   <image source="PNG/Tiles/tile_142.png" width="64" height="64"/>
+  </tile>
+  <tile id="142">
+   <image source="PNG/Tiles/tile_143.png" width="64" height="64"/>
+  </tile>
+  <tile id="143">
+   <image source="PNG/Tiles/tile_144.png" width="64" height="64"/>
+  </tile>
+  <tile id="144">
+   <image source="PNG/Tiles/tile_145.png" width="64" height="64"/>
+  </tile>
+  <tile id="145">
+   <image source="PNG/Tiles/tile_146.png" width="64" height="64"/>
+  </tile>
+  <tile id="146">
+   <image source="PNG/Tiles/tile_147.png" width="64" height="64"/>
+  </tile>
+  <tile id="147">
+   <image source="PNG/Tiles/tile_148.png" width="64" height="64"/>
+  </tile>
+  <tile id="148">
+   <image source="PNG/Tiles/tile_149.png" width="64" height="64"/>
+  </tile>
+  <tile id="149">
+   <image source="PNG/Tiles/tile_150.png" width="64" height="64"/>
+  </tile>
+  <tile id="150">
+   <image source="PNG/Tiles/tile_151.png" width="64" height="64"/>
+  </tile>
+  <tile id="151">
+   <image source="PNG/Tiles/tile_152.png" width="64" height="64"/>
+  </tile>
+  <tile id="152">
+   <image source="PNG/Tiles/tile_153.png" width="64" height="64"/>
+  </tile>
+  <tile id="153">
+   <image source="PNG/Tiles/tile_154.png" width="64" height="64"/>
+  </tile>
+  <tile id="154">
+   <image source="PNG/Tiles/tile_155.png" width="64" height="64"/>
+  </tile>
+  <tile id="155">
+   <image source="PNG/Tiles/tile_156.png" width="64" height="64"/>
+  </tile>
+  <tile id="156">
+   <image source="PNG/Tiles/tile_157.png" width="64" height="64"/>
+  </tile>
+  <tile id="157">
+   <image source="PNG/Tiles/tile_158.png" width="64" height="64"/>
+  </tile>
+  <tile id="158">
+   <image source="PNG/Tiles/tile_159.png" width="64" height="64"/>
+  </tile>
+  <tile id="159">
+   <image source="PNG/Tiles/tile_160.png" width="64" height="64"/>
+  </tile>
+  <tile id="160">
+   <image source="PNG/Tiles/tile_161.png" width="64" height="64"/>
+  </tile>
+  <tile id="162">
+   <image source="PNG/Tiles/tile_163.png" width="64" height="64"/>
+  </tile>
+  <tile id="163">
+   <image source="PNG/Tiles/tile_164.png" width="64" height="64"/>
+  </tile>
+  <tile id="164">
+   <image source="PNG/Tiles/tile_165.png" width="64" height="64"/>
+  </tile>
+  <tile id="165">
+   <image source="PNG/Tiles/tile_166.png" width="64" height="64"/>
+  </tile>
+  <tile id="166">
+   <image source="PNG/Tiles/tile_167.png" width="64" height="64"/>
+  </tile>
+  <tile id="167">
+   <image source="PNG/Tiles/tile_168.png" width="64" height="64"/>
+  </tile>
+  <tile id="168">
+   <image source="PNG/Tiles/tile_169.png" width="64" height="64"/>
+  </tile>
+  <tile id="169">
+   <image source="PNG/Tiles/tile_170.png" width="64" height="64"/>
+  </tile>
+  <tile id="170">
+   <image source="PNG/Tiles/tile_171.png" width="64" height="64"/>
+  </tile>
+  <tile id="171">
+   <image source="PNG/Tiles/tile_172.png" width="64" height="64"/>
+  </tile>
+  <tile id="172">
+   <image source="PNG/Tiles/tile_173.png" width="64" height="64"/>
+  </tile>
+  <tile id="173">
+   <image source="PNG/Tiles/tile_174.png" width="64" height="64"/>
+  </tile>
+  <tile id="174">
+   <image source="PNG/Tiles/tile_175.png" width="64" height="64"/>
+  </tile>
+  <tile id="175">
+   <image source="PNG/Tiles/tile_176.png" width="64" height="64"/>
+  </tile>
+  <tile id="176">
+   <image source="PNG/Tiles/tile_177.png" width="64" height="64"/>
+  </tile>
+  <tile id="177">
+   <image source="PNG/Tiles/tile_178.png" width="64" height="64"/>
+  </tile>
+  <tile id="178">
+   <image source="PNG/Tiles/tile_179.png" width="64" height="64"/>
+  </tile>
+  <tile id="179">
+   <image source="PNG/Tiles/tile_180.png" width="64" height="64"/>
+  </tile>
+  <tile id="180">
+   <image source="PNG/Tiles/tile_181.png" width="64" height="64"/>
+  </tile>
+  <tile id="181">
+   <image source="PNG/Tiles/tile_182.png" width="64" height="64"/>
+  </tile>
+  <tile id="182">
+   <image source="PNG/Tiles/tile_183.png" width="64" height="64"/>
+  </tile>
+  <tile id="183">
+   <image source="PNG/Tiles/tile_184.png" width="64" height="64"/>
+  </tile>
+  <tile id="184">
+   <image source="PNG/Tiles/tile_185.png" width="64" height="64"/>
+  </tile>
+  <tile id="185">
+   <image source="PNG/Tiles/tile_186.png" width="64" height="64"/>
+  </tile>
+  <tile id="186">
+   <image source="PNG/Tiles/tile_187.png" width="64" height="64"/>
+  </tile>
+  <tile id="187">
+   <image source="PNG/Tiles/tile_188.png" width="64" height="64"/>
+  </tile>
+  <tile id="189">
+   <image source="PNG/Tiles/tile_190.png" width="64" height="64"/>
+  </tile>
+  <tile id="190">
+   <image source="PNG/Tiles/tile_191.png" width="64" height="64"/>
+  </tile>
+  <tile id="191">
+   <image source="PNG/Tiles/tile_192.png" width="64" height="64"/>
+  </tile>
+  <tile id="192">
+   <image source="PNG/Tiles/tile_193.png" width="64" height="64"/>
+  </tile>
+  <tile id="193">
+   <image source="PNG/Tiles/tile_194.png" width="64" height="64"/>
+  </tile>
+  <tile id="194">
+   <image source="PNG/Tiles/tile_195.png" width="64" height="64"/>
+  </tile>
+  <tile id="195">
+   <image source="PNG/Tiles/tile_196.png" width="64" height="64"/>
+  </tile>
+  <tile id="196">
+   <image source="PNG/Tiles/tile_197.png" width="64" height="64"/>
+  </tile>
+  <tile id="197">
+   <image source="PNG/Tiles/tile_198.png" width="64" height="64"/>
+  </tile>
+  <tile id="198">
+   <image source="PNG/Tiles/tile_199.png" width="64" height="64"/>
+  </tile>
+  <tile id="199">
+   <image source="PNG/Tiles/tile_200.png" width="64" height="64"/>
+  </tile>
+  <tile id="200">
+   <image source="PNG/Tiles/tile_201.png" width="64" height="64"/>
+  </tile>
+  <tile id="201">
+   <image source="PNG/Tiles/tile_202.png" width="64" height="64"/>
+  </tile>
+  <tile id="202">
+   <image source="PNG/Tiles/tile_203.png" width="64" height="64"/>
+  </tile>
+  <tile id="203">
+   <image source="PNG/Tiles/tile_204.png" width="64" height="64"/>
+  </tile>
+  <tile id="204">
+   <image source="PNG/Tiles/tile_205.png" width="64" height="64"/>
+  </tile>
+  <tile id="205">
+   <image source="PNG/Tiles/tile_206.png" width="64" height="64"/>
+  </tile>
+  <tile id="206">
+   <image source="PNG/Tiles/tile_207.png" width="64" height="64"/>
+  </tile>
+  <tile id="207">
+   <image source="PNG/Tiles/tile_208.png" width="64" height="64"/>
+  </tile>
+  <tile id="208">
+   <image source="PNG/Tiles/tile_209.png" width="64" height="64"/>
+  </tile>
+  <tile id="209">
+   <image source="PNG/Tiles/tile_210.png" width="64" height="64"/>
+  </tile>
+  <tile id="210">
+   <image source="PNG/Tiles/tile_211.png" width="64" height="64"/>
+  </tile>
+  <tile id="211">
+   <image source="PNG/Tiles/tile_212.png" width="64" height="64"/>
+  </tile>
+  <tile id="212">
+   <image source="PNG/Tiles/tile_213.png" width="64" height="64"/>
+  </tile>
+  <tile id="213">
+   <image source="PNG/Tiles/tile_214.png" width="64" height="64"/>
+  </tile>
+  <tile id="214">
+   <image source="PNG/Tiles/tile_215.png" width="64" height="64"/>
+  </tile>
+  <tile id="216">
+   <image source="PNG/Tiles/tile_217.png" width="64" height="64"/>
+  </tile>
+  <tile id="217">
+   <image source="PNG/Tiles/tile_218.png" width="64" height="64"/>
+  </tile>
+  <tile id="218">
+   <image source="PNG/Tiles/tile_219.png" width="64" height="64"/>
+  </tile>
+  <tile id="219">
+   <image source="PNG/Tiles/tile_220.png" width="64" height="64"/>
+  </tile>
+  <tile id="220">
+   <image source="PNG/Tiles/tile_221.png" width="64" height="64"/>
+  </tile>
+  <tile id="221">
+   <image source="PNG/Tiles/tile_222.png" width="64" height="64"/>
+  </tile>
+  <tile id="222">
+   <image source="PNG/Tiles/tile_223.png" width="64" height="64"/>
+  </tile>
+  <tile id="223">
+   <image source="PNG/Tiles/tile_224.png" width="64" height="64"/>
+  </tile>
+  <tile id="224">
+   <image source="PNG/Tiles/tile_225.png" width="64" height="64"/>
+  </tile>
+  <tile id="225">
+   <image source="PNG/Tiles/tile_226.png" width="64" height="64"/>
+  </tile>
+  <tile id="226">
+   <image source="PNG/Tiles/tile_227.png" width="64" height="64"/>
+  </tile>
+  <tile id="227">
+   <image source="PNG/Tiles/tile_228.png" width="64" height="64"/>
+  </tile>
+  <tile id="228">
+   <image source="PNG/Tiles/tile_229.png" width="64" height="64"/>
+  </tile>
+  <tile id="229">
+   <image source="PNG/Tiles/tile_230.png" width="64" height="64"/>
+  </tile>
+  <tile id="230">
+   <image source="PNG/Tiles/tile_231.png" width="64" height="64"/>
+  </tile>
+  <tile id="231">
+   <image source="PNG/Tiles/tile_232.png" width="64" height="64"/>
+  </tile>
+  <tile id="232">
+   <image source="PNG/Tiles/tile_233.png" width="64" height="64"/>
+  </tile>
+  <tile id="233">
+   <image source="PNG/Tiles/tile_234.png" width="64" height="64"/>
+  </tile>
+  <tile id="234">
+   <image source="PNG/Tiles/tile_235.png" width="64" height="64"/>
+  </tile>
+  <tile id="235">
+   <image source="PNG/Tiles/tile_236.png" width="64" height="64"/>
+  </tile>
+  <tile id="236">
+   <image source="PNG/Tiles/tile_237.png" width="64" height="64"/>
+  </tile>
+  <tile id="237">
+   <image source="PNG/Tiles/tile_238.png" width="64" height="64"/>
+  </tile>
+  <tile id="238">
+   <image source="PNG/Tiles/tile_239.png" width="64" height="64"/>
+  </tile>
+  <tile id="239">
+   <image source="PNG/Tiles/tile_240.png" width="64" height="64"/>
+  </tile>
+  <tile id="240">
+   <image source="PNG/Tiles/tile_241.png" width="64" height="64"/>
+  </tile>
+  <tile id="241">
+   <image source="PNG/Tiles/tile_242.png" width="64" height="64"/>
+  </tile>
+  <tile id="242">
+   <image source="PNG/Tiles/tile_243.png" width="64" height="64"/>
+  </tile>
+  <tile id="243">
+   <image source="PNG/Tiles/tile_244.png" width="64" height="64"/>
+  </tile>
+  <tile id="244">
+   <image source="PNG/Tiles/tile_245.png" width="64" height="64"/>
+  </tile>
+  <tile id="245">
+   <image source="PNG/Tiles/tile_246.png" width="64" height="64"/>
+  </tile>
+  <tile id="246">
+   <image source="PNG/Tiles/tile_247.png" width="64" height="64"/>
+  </tile>
+  <tile id="247">
+   <image source="PNG/Tiles/tile_248.png" width="64" height="64"/>
+  </tile>
+  <tile id="248">
+   <image source="PNG/Tiles/tile_249.png" width="64" height="64"/>
+  </tile>
+  <tile id="249">
+   <image source="PNG/Tiles/tile_250.png" width="64" height="64"/>
+  </tile>
+  <tile id="250">
+   <image source="PNG/Tiles/tile_251.png" width="64" height="64"/>
+  </tile>
+  <tile id="251">
+   <image source="PNG/Tiles/tile_252.png" width="64" height="64"/>
+  </tile>
+  <tile id="252">
+   <image source="PNG/Tiles/tile_253.png" width="64" height="64"/>
+  </tile>
+  <tile id="253">
+   <image source="PNG/Tiles/tile_254.png" width="64" height="64"/>
+  </tile>
+  <tile id="254">
+   <image source="PNG/Tiles/tile_255.png" width="64" height="64"/>
+  </tile>
+  <tile id="255">
+   <image source="PNG/Tiles/tile_256.png" width="64" height="64"/>
+  </tile>
+  <tile id="256">
+   <image source="PNG/Tiles/tile_257.png" width="64" height="64"/>
+  </tile>
+  <tile id="257">
+   <image source="PNG/Tiles/tile_258.png" width="64" height="64"/>
+  </tile>
+  <tile id="258">
+   <image source="PNG/Tiles/tile_259.png" width="64" height="64"/>
+  </tile>
+  <tile id="259">
+   <image source="PNG/Tiles/tile_260.png" width="64" height="64"/>
+  </tile>
+  <tile id="260">
+   <image source="PNG/Tiles/tile_261.png" width="64" height="64"/>
+  </tile>
+  <tile id="261">
+   <image source="PNG/Tiles/tile_262.png" width="64" height="64"/>
+  </tile>
+  <tile id="262">
+   <image source="PNG/Tiles/tile_263.png" width="64" height="64"/>
+  </tile>
+  <tile id="263">
+   <image source="PNG/Tiles/tile_264.png" width="64" height="64"/>
+  </tile>
+  <tile id="264">
+   <image source="PNG/Tiles/tile_265.png" width="64" height="64"/>
+  </tile>
+  <tile id="265">
+   <image source="PNG/Tiles/tile_266.png" width="64" height="64"/>
+  </tile>
+  <tile id="266">
+   <image source="PNG/Tiles/tile_267.png" width="64" height="64"/>
+  </tile>
+  <tile id="267">
+   <image source="PNG/Tiles/tile_268.png" width="64" height="64"/>
+  </tile>
+  <tile id="268">
+   <image source="PNG/Tiles/tile_269.png" width="64" height="64"/>
+  </tile>
+  <tile id="269">
+   <image source="PNG/Tiles/tile_270.png" width="64" height="64"/>
+  </tile>
+  <tile id="270">
+   <image source="PNG/Tiles/tile_271.png" width="64" height="64"/>
+  </tile>
+  <tile id="271">
+   <image source="PNG/Tiles/tile_272.png" width="64" height="64"/>
+  </tile>
+  <tile id="272">
+   <image source="PNG/Tiles/tile_273.png" width="64" height="64"/>
+  </tile>
+  <tile id="273">
+   <image source="PNG/Tiles/tile_274.png" width="64" height="64"/>
+  </tile>
+  <tile id="274">
+   <image source="PNG/Tiles/tile_275.png" width="64" height="64"/>
+  </tile>
+  <tile id="275">
+   <image source="PNG/Tiles/tile_276.png" width="64" height="64"/>
+  </tile>
+  <tile id="276">
+   <image source="PNG/Tiles/tile_277.png" width="64" height="64"/>
+  </tile>
+  <tile id="277">
+   <image source="PNG/Tiles/tile_278.png" width="64" height="64"/>
+  </tile>
+  <tile id="278">
+   <image source="PNG/Tiles/tile_279.png" width="64" height="64"/>
+  </tile>
+  <tile id="279">
+   <image source="PNG/Tiles/tile_280.png" width="64" height="64"/>
+  </tile>
+  <tile id="280">
+   <image source="PNG/Tiles/tile_281.png" width="64" height="64"/>
+  </tile>
+  <tile id="281">
+   <image source="PNG/Tiles/tile_282.png" width="64" height="64"/>
+  </tile>
+  <tile id="282">
+   <image source="PNG/Tiles/tile_283.png" width="64" height="64"/>
+  </tile>
+  <tile id="283">
+   <image source="PNG/Tiles/tile_284.png" width="64" height="64"/>
+  </tile>
+  <tile id="284">
+   <image source="PNG/Tiles/tile_285.png" width="64" height="64"/>
+  </tile>
+  <tile id="285">
+   <image source="PNG/Tiles/tile_286.png" width="64" height="64"/>
+  </tile>
+  <tile id="286">
+   <image source="PNG/Tiles/tile_287.png" width="64" height="64"/>
+  </tile>
+  <tile id="287">
+   <image source="PNG/Tiles/tile_288.png" width="64" height="64"/>
+  </tile>
+  <tile id="288">
+   <image source="PNG/Tiles/tile_289.png" width="64" height="64"/>
+  </tile>
+  <tile id="289">
+   <image source="PNG/Tiles/tile_290.png" width="64" height="64"/>
+  </tile>
+  <tile id="290">
+   <image source="PNG/Tiles/tile_291.png" width="64" height="64"/>
+  </tile>
+  <tile id="291">
+   <image source="PNG/Tiles/tile_292.png" width="64" height="64"/>
+  </tile>
+  <tile id="292">
+   <image source="PNG/Tiles/tile_293.png" width="64" height="64"/>
+  </tile>
+  <tile id="293">
+   <image source="PNG/Tiles/tile_294.png" width="64" height="64"/>
+  </tile>
+  <tile id="294">
+   <image source="PNG/Tiles/tile_295.png" width="64" height="64"/>
+  </tile>
+  <tile id="295">
+   <image source="PNG/Tiles/tile_296.png" width="64" height="64"/>
+  </tile>
+  <tile id="296">
+   <image source="PNG/Tiles/tile_297.png" width="64" height="64"/>
+  </tile>
+  <tile id="297">
+   <image source="PNG/Tiles/tile_298.png" width="64" height="64"/>
+  </tile>
+  <tile id="298">
+   <image source="PNG/Tiles/tile_299.png" width="64" height="64"/>
+  </tile>
+  <tile id="299">
+   <image source="PNG/Tiles/tile_300.png" width="64" height="64"/>
+  </tile>
+  <tile id="300">
+   <image source="PNG/Tiles/tile_301.png" width="64" height="64"/>
+  </tile>
+  <tile id="301">
+   <image source="PNG/Tiles/tile_302.png" width="64" height="64"/>
+  </tile>
+  <tile id="302">
+   <image source="PNG/Tiles/tile_303.png" width="64" height="64"/>
+  </tile>
+  <tile id="303">
+   <image source="PNG/Tiles/tile_304.png" width="64" height="64"/>
+  </tile>
+  <tile id="304">
+   <image source="PNG/Tiles/tile_305.png" width="64" height="64"/>
+  </tile>
+  <tile id="305">
+   <image source="PNG/Tiles/tile_306.png" width="64" height="64"/>
+  </tile>
+  <tile id="306">
+   <image source="PNG/Tiles/tile_307.png" width="64" height="64"/>
+  </tile>
+  <tile id="307">
+   <image source="PNG/Tiles/tile_308.png" width="64" height="64"/>
+  </tile>
+  <tile id="308">
+   <image source="PNG/Tiles/tile_309.png" width="64" height="64"/>
+  </tile>
+  <tile id="309">
+   <image source="PNG/Tiles/tile_310.png" width="64" height="64"/>
+  </tile>
+  <tile id="310">
+   <image source="PNG/Tiles/tile_311.png" width="64" height="64"/>
+  </tile>
+  <tile id="311">
+   <image source="PNG/Tiles/tile_312.png" width="64" height="64"/>
+  </tile>
+  <tile id="312">
+   <image source="PNG/Tiles/tile_313.png" width="64" height="64"/>
+  </tile>
+  <tile id="313">
+   <image source="PNG/Tiles/tile_314.png" width="64" height="64"/>
+  </tile>
+  <tile id="314">
+   <image source="PNG/Tiles/tile_315.png" width="64" height="64"/>
+  </tile>
+  <tile id="315">
+   <image source="PNG/Tiles/tile_316.png" width="64" height="64"/>
+  </tile>
+  <tile id="316">
+   <image source="PNG/Tiles/tile_317.png" width="64" height="64"/>
+  </tile>
+  <tile id="317">
+   <image source="PNG/Tiles/tile_318.png" width="64" height="64"/>
+  </tile>
+  <tile id="318">
+   <image source="PNG/Tiles/tile_319.png" width="64" height="64"/>
+  </tile>
+  <tile id="319">
+   <image source="PNG/Tiles/tile_320.png" width="64" height="64"/>
+  </tile>
+  <tile id="320">
+   <image source="PNG/Tiles/tile_321.png" width="64" height="64"/>
+  </tile>
+  <tile id="321">
+   <image source="PNG/Tiles/tile_322.png" width="64" height="64"/>
+  </tile>
+  <tile id="322">
+   <image source="PNG/Tiles/tile_323.png" width="64" height="64"/>
+  </tile>
+  <tile id="323">
+   <image source="PNG/Tiles/tile_324.png" width="64" height="64"/>
+  </tile>
+  <tile id="324">
+   <image source="PNG/Tiles/tile_325.png" width="64" height="64"/>
+  </tile>
+  <tile id="325">
+   <image source="PNG/Tiles/tile_326.png" width="64" height="64"/>
+  </tile>
+  <tile id="326">
+   <image source="PNG/Tiles/tile_327.png" width="64" height="64"/>
+  </tile>
+  <tile id="327">
+   <image source="PNG/Tiles/tile_328.png" width="64" height="64"/>
+  </tile>
+  <tile id="328">
+   <image source="PNG/Tiles/tile_329.png" width="64" height="64"/>
+  </tile>
+  <tile id="329">
+   <image source="PNG/Tiles/tile_330.png" width="64" height="64"/>
+  </tile>
+  <tile id="330">
+   <image source="PNG/Tiles/tile_331.png" width="64" height="64"/>
+  </tile>
+  <tile id="331">
+   <image source="PNG/Tiles/tile_332.png" width="64" height="64"/>
+  </tile>
+  <tile id="332">
+   <image source="PNG/Tiles/tile_333.png" width="64" height="64"/>
+  </tile>
+  <tile id="333">
+   <image source="PNG/Tiles/tile_334.png" width="64" height="64"/>
+  </tile>
+  <tile id="334">
+   <image source="PNG/Tiles/tile_335.png" width="64" height="64"/>
+  </tile>
+  <tile id="335">
+   <image source="PNG/Tiles/tile_336.png" width="64" height="64"/>
+  </tile>
+  <tile id="336">
+   <image source="PNG/Tiles/tile_337.png" width="64" height="64"/>
+  </tile>
+  <tile id="337">
+   <image source="PNG/Tiles/tile_338.png" width="64" height="64"/>
+  </tile>
+  <tile id="338">
+   <image source="PNG/Tiles/tile_339.png" width="64" height="64"/>
+  </tile>
+  <tile id="339">
+   <image source="PNG/Tiles/tile_340.png" width="64" height="64"/>
+  </tile>
+  <tile id="340">
+   <image source="PNG/Tiles/tile_341.png" width="64" height="64"/>
+  </tile>
+  <tile id="341">
+   <image source="PNG/Tiles/tile_342.png" width="64" height="64"/>
+  </tile>
+  <tile id="342">
+   <image source="PNG/Tiles/tile_343.png" width="64" height="64"/>
+  </tile>
+  <tile id="343">
+   <image source="PNG/Tiles/tile_344.png" width="64" height="64"/>
+  </tile>
+  <tile id="344">
+   <image source="PNG/Tiles/tile_345.png" width="64" height="64"/>
+  </tile>
+  <tile id="345">
+   <image source="PNG/Tiles/tile_346.png" width="64" height="64"/>
+  </tile>
+  <tile id="346">
+   <image source="PNG/Tiles/tile_347.png" width="64" height="64"/>
+  </tile>
+  <tile id="347">
+   <image source="PNG/Tiles/tile_348.png" width="64" height="64"/>
+  </tile>
+  <tile id="348">
+   <image source="PNG/Tiles/tile_349.png" width="64" height="64"/>
+  </tile>
+  <tile id="349">
+   <image source="PNG/Tiles/tile_350.png" width="64" height="64"/>
+  </tile>
+  <tile id="350">
+   <image source="PNG/Tiles/tile_351.png" width="64" height="64"/>
+  </tile>
+  <tile id="351">
+   <image source="PNG/Tiles/tile_352.png" width="64" height="64"/>
+  </tile>
+  <tile id="352">
+   <image source="PNG/Tiles/tile_353.png" width="64" height="64"/>
+  </tile>
+  <tile id="353">
+   <image source="PNG/Tiles/tile_354.png" width="64" height="64"/>
+  </tile>
+  <tile id="354">
+   <image source="PNG/Tiles/tile_355.png" width="64" height="64"/>
+  </tile>
+  <tile id="355">
+   <image source="PNG/Tiles/tile_356.png" width="64" height="64"/>
+  </tile>
+  <tile id="356">
+   <image source="PNG/Tiles/tile_357.png" width="64" height="64"/>
+  </tile>
+  <tile id="357">
+   <image source="PNG/Tiles/tile_358.png" width="64" height="64"/>
+  </tile>
+  <tile id="358">
+   <image source="PNG/Tiles/tile_359.png" width="64" height="64"/>
+  </tile>
+  <tile id="359">
+   <image source="PNG/Tiles/tile_360.png" width="64" height="64"/>
+  </tile>
+  <tile id="360">
+   <image source="PNG/Tiles/tile_361.png" width="64" height="64"/>
+  </tile>
+  <tile id="361">
+   <image source="PNG/Tiles/tile_362.png" width="64" height="64"/>
+  </tile>
+  <tile id="362">
+   <image source="PNG/Tiles/tile_363.png" width="64" height="64"/>
+  </tile>
+  <tile id="363">
+   <image source="PNG/Tiles/tile_364.png" width="64" height="64"/>
+  </tile>
+  <tile id="364">
+   <image source="PNG/Tiles/tile_365.png" width="64" height="64"/>
+  </tile>
+  <tile id="365">
+   <image source="PNG/Tiles/tile_366.png" width="64" height="64"/>
+  </tile>
+  <tile id="366">
+   <image source="PNG/Tiles/tile_367.png" width="64" height="64"/>
+  </tile>
+  <tile id="367">
+   <image source="PNG/Tiles/tile_368.png" width="64" height="64"/>
+  </tile>
+  <tile id="368">
+   <image source="PNG/Tiles/tile_369.png" width="64" height="64"/>
+  </tile>
+  <tile id="369">
+   <image source="PNG/Tiles/tile_370.png" width="64" height="64"/>
+  </tile>
+  <tile id="370">
+   <image source="PNG/Tiles/tile_371.png" width="64" height="64"/>
+  </tile>
+  <tile id="371">
+   <image source="PNG/Tiles/tile_372.png" width="64" height="64"/>
+  </tile>
+  <tile id="372">
+   <image source="PNG/Tiles/tile_373.png" width="64" height="64"/>
+  </tile>
+  <tile id="373">
+   <image source="PNG/Tiles/tile_374.png" width="64" height="64"/>
+  </tile>
+  <tile id="374">
+   <image source="PNG/Tiles/tile_375.png" width="64" height="64"/>
+  </tile>
+  <tile id="375">
+   <image source="PNG/Tiles/tile_376.png" width="64" height="64"/>
+  </tile>
+  <tile id="376">
+   <image source="PNG/Tiles/tile_377.png" width="64" height="64"/>
+  </tile>
+  <tile id="377">
+   <image source="PNG/Tiles/tile_378.png" width="64" height="64"/>
+  </tile>
+  <tile id="378">
+   <image source="PNG/Tiles/tile_379.png" width="64" height="64"/>
+  </tile>
+  <tile id="379">
+   <image source="PNG/Tiles/tile_380.png" width="64" height="64"/>
+  </tile>
+  <tile id="380">
+   <image source="PNG/Tiles/tile_381.png" width="64" height="64"/>
+  </tile>
+  <tile id="381">
+   <image source="PNG/Tiles/tile_382.png" width="64" height="64"/>
+  </tile>
+  <tile id="382">
+   <image source="PNG/Tiles/tile_383.png" width="64" height="64"/>
+  </tile>
+  <tile id="383">
+   <image source="PNG/Tiles/tile_384.png" width="64" height="64"/>
+  </tile>
+  <tile id="384">
+   <image source="PNG/Tiles/tile_385.png" width="64" height="64"/>
+  </tile>
+  <tile id="385">
+   <image source="PNG/Tiles/tile_386.png" width="64" height="64"/>
+  </tile>
+  <tile id="386">
+   <image source="PNG/Tiles/tile_387.png" width="64" height="64"/>
+  </tile>
+  <tile id="387">
+   <image source="PNG/Tiles/tile_388.png" width="64" height="64"/>
+  </tile>
+  <tile id="388">
+   <image source="PNG/Tiles/tile_389.png" width="64" height="64"/>
+  </tile>
+  <tile id="389">
+   <image source="PNG/Tiles/tile_390.png" width="64" height="64"/>
+  </tile>
+  <tile id="390">
+   <image source="PNG/Tiles/tile_391.png" width="64" height="64"/>
+  </tile>
+  <tile id="391">
+   <image source="PNG/Tiles/tile_392.png" width="64" height="64"/>
+  </tile>
+  <tile id="392">
+   <image source="PNG/Tiles/tile_393.png" width="64" height="64"/>
+  </tile>
+  <tile id="393">
+   <image source="PNG/Tiles/tile_394.png" width="64" height="64"/>
+  </tile>
+  <tile id="394">
+   <image source="PNG/Tiles/tile_395.png" width="64" height="64"/>
+  </tile>
+  <tile id="395">
+   <image source="PNG/Tiles/tile_396.png" width="64" height="64"/>
+  </tile>
+  <tile id="396">
+   <image source="PNG/Tiles/tile_397.png" width="64" height="64"/>
+  </tile>
+  <tile id="397">
+   <image source="PNG/Tiles/tile_398.png" width="64" height="64"/>
+  </tile>
+  <tile id="398">
+   <image source="PNG/Tiles/tile_399.png" width="64" height="64"/>
+  </tile>
+  <tile id="399">
+   <image source="PNG/Tiles/tile_400.png" width="64" height="64"/>
+  </tile>
+  <tile id="400">
+   <image source="PNG/Tiles/tile_401.png" width="64" height="64"/>
+  </tile>
+  <tile id="401">
+   <image source="PNG/Tiles/tile_402.png" width="64" height="64"/>
+  </tile>
+  <tile id="402">
+   <image source="PNG/Tiles/tile_403.png" width="64" height="64"/>
+  </tile>
+  <tile id="403">
+   <image source="PNG/Tiles/tile_404.png" width="64" height="64"/>
+  </tile>
+  <tile id="404">
+   <image source="PNG/Tiles/tile_405.png" width="64" height="64"/>
+  </tile>
+  <tile id="405">
+   <image source="PNG/Tiles/tile_406.png" width="64" height="64"/>
+  </tile>
+  <tile id="406">
+   <image source="PNG/Tiles/tile_407.png" width="64" height="64"/>
+  </tile>
+  <tile id="407">
+   <image source="PNG/Tiles/tile_408.png" width="64" height="64"/>
+  </tile>
+  <tile id="408">
+   <image source="PNG/Tiles/tile_409.png" width="64" height="64"/>
+  </tile>
+  <tile id="409">
+   <image source="PNG/Tiles/tile_410.png" width="64" height="64"/>
+  </tile>
+  <tile id="410">
+   <image source="PNG/Tiles/tile_411.png" width="64" height="64"/>
+  </tile>
+  <tile id="411">
+   <image source="PNG/Tiles/tile_412.png" width="64" height="64"/>
+  </tile>
+  <tile id="412">
+   <image source="PNG/Tiles/tile_413.png" width="64" height="64"/>
+  </tile>
+  <tile id="413">
+   <image source="PNG/Tiles/tile_414.png" width="64" height="64"/>
+  </tile>
+  <tile id="414">
+   <image source="PNG/Tiles/tile_415.png" width="64" height="64"/>
+  </tile>
+  <tile id="415">
+   <image source="PNG/Tiles/tile_416.png" width="64" height="64"/>
+  </tile>
+  <tile id="416">
+   <image source="PNG/Tiles/tile_417.png" width="64" height="64"/>
+  </tile>
+  <tile id="417">
+   <image source="PNG/Tiles/tile_418.png" width="64" height="64"/>
+  </tile>
+  <tile id="418">
+   <image source="PNG/Tiles/tile_419.png" width="64" height="64"/>
+  </tile>
+  <tile id="419">
+   <image source="PNG/Tiles/tile_420.png" width="64" height="64"/>
+  </tile>
+  <tile id="420">
+   <image source="PNG/Tiles/tile_421.png" width="64" height="64"/>
+  </tile>
+  <tile id="421">
+   <image source="PNG/Tiles/tile_422.png" width="64" height="64"/>
+  </tile>
+  <tile id="422">
+   <image source="PNG/Tiles/tile_423.png" width="64" height="64"/>
+  </tile>
+  <tile id="423">
+   <image source="PNG/Tiles/tile_424.png" width="64" height="64"/>
+  </tile>
+  <tile id="424">
+   <image source="PNG/Tiles/tile_425.png" width="64" height="64"/>
+  </tile>
+  <tile id="425">
+   <image source="PNG/Tiles/tile_426.png" width="64" height="64"/>
+  </tile>
+  <tile id="426">
+   <image source="PNG/Tiles/tile_427.png" width="64" height="64"/>
+  </tile>
+  <tile id="427">
+   <image source="PNG/Tiles/tile_428.png" width="64" height="64"/>
+  </tile>
+  <tile id="428">
+   <image source="PNG/Tiles/tile_429.png" width="64" height="64"/>
+  </tile>
+  <tile id="429">
+   <image source="PNG/Tiles/tile_430.png" width="64" height="64"/>
+  </tile>
+  <tile id="430">
+   <image source="PNG/Tiles/tile_431.png" width="64" height="64"/>
+  </tile>
+  <tile id="431">
+   <image source="PNG/Tiles/tile_432.png" width="64" height="64"/>
+  </tile>
+  <tile id="432">
+   <image source="PNG/Tiles/tile_433.png" width="64" height="64"/>
+  </tile>
+  <tile id="433">
+   <image source="PNG/Tiles/tile_434.png" width="64" height="64"/>
+  </tile>
+  <tile id="434">
+   <image source="PNG/Tiles/tile_435.png" width="64" height="64"/>
+  </tile>
+  <tile id="435">
+   <image source="PNG/Tiles/tile_436.png" width="64" height="64"/>
+  </tile>
+  <tile id="436">
+   <image source="PNG/Tiles/tile_437.png" width="64" height="64"/>
+  </tile>
+  <tile id="437">
+   <image source="PNG/Tiles/tile_438.png" width="64" height="64"/>
+  </tile>
+  <tile id="438">
+   <image source="PNG/Tiles/tile_439.png" width="64" height="64"/>
+  </tile>
+  <tile id="439">
+   <image source="PNG/Tiles/tile_440.png" width="64" height="64"/>
+  </tile>
+  <tile id="440">
+   <image source="PNG/Tiles/tile_441.png" width="64" height="64"/>
+  </tile>
+  <tile id="441">
+   <image source="PNG/Tiles/tile_442.png" width="64" height="64"/>
+  </tile>
+  <tile id="442">
+   <image source="PNG/Tiles/tile_443.png" width="64" height="64"/>
+  </tile>
+  <tile id="443">
+   <image source="PNG/Tiles/tile_444.png" width="64" height="64"/>
+  </tile>
+  <tile id="444">
+   <image source="PNG/Tiles/tile_445.png" width="64" height="64"/>
+  </tile>
+  <tile id="445">
+   <image source="PNG/Tiles/tile_446.png" width="64" height="64"/>
+  </tile>
+  <tile id="446">
+   <image source="PNG/Tiles/tile_447.png" width="64" height="64"/>
+  </tile>
+  <tile id="447">
+   <image source="PNG/Tiles/tile_448.png" width="64" height="64"/>
+  </tile>
+  <tile id="448">
+   <image source="PNG/Tiles/tile_449.png" width="64" height="64"/>
+  </tile>
+  <tile id="449">
+   <image source="PNG/Tiles/tile_450.png" width="64" height="64"/>
+  </tile>
+  <tile id="450">
+   <image source="PNG/Tiles/tile_451.png" width="64" height="64"/>
+  </tile>
+  <tile id="451">
+   <image source="PNG/Tiles/tile_452.png" width="64" height="64"/>
+  </tile>
+  <tile id="452">
+   <image source="PNG/Tiles/tile_453.png" width="64" height="64"/>
+  </tile>
+  <tile id="453">
+   <image source="PNG/Tiles/tile_454.png" width="64" height="64"/>
+  </tile>
+  <tile id="454">
+   <image source="PNG/Tiles/tile_455.png" width="64" height="64"/>
+  </tile>
+  <tile id="455">
+   <image source="PNG/Tiles/tile_456.png" width="64" height="64"/>
+  </tile>
+  <tile id="456">
+   <image source="PNG/Tiles/tile_457.png" width="64" height="64"/>
+  </tile>
+  <tile id="459">
+   <image source="PNG/Tiles/tile_460.png" width="64" height="64"/>
+  </tile>
+  <tile id="460">
+   <image source="PNG/Tiles/tile_461.png" width="64" height="64"/>
+  </tile>
+  <tile id="461">
+   <image source="PNG/Tiles/tile_462.png" width="64" height="64"/>
+  </tile>
+  <tile id="462">
+   <image source="PNG/Tiles/tile_463.png" width="64" height="64"/>
+  </tile>
+  <tile id="463">
+   <image source="PNG/Tiles/tile_464.png" width="64" height="64"/>
+  </tile>
+  <tile id="464">
+   <image source="PNG/Tiles/tile_465.png" width="64" height="64"/>
+  </tile>
+  <tile id="465">
+   <image source="PNG/Tiles/tile_466.png" width="64" height="64"/>
+  </tile>
+  <tile id="466">
+   <image source="PNG/Tiles/tile_467.png" width="64" height="64"/>
+  </tile>
+  <tile id="467">
+   <image source="PNG/Tiles/tile_468.png" width="64" height="64"/>
+  </tile>
+  <tile id="468">
+   <image source="PNG/Tiles/tile_469.png" width="64" height="64"/>
+  </tile>
+  <tile id="469">
+   <image source="PNG/Tiles/tile_470.png" width="64" height="64"/>
+  </tile>
+  <tile id="470">
+   <image source="PNG/Tiles/tile_471.png" width="64" height="64"/>
+  </tile>
+  <tile id="471">
+   <image source="PNG/Tiles/tile_472.png" width="64" height="64"/>
+  </tile>
+  <tile id="472">
+   <image source="PNG/Tiles/tile_473.png" width="64" height="64"/>
+  </tile>
+  <tile id="473">
+   <image source="PNG/Tiles/tile_474.png" width="64" height="64"/>
+  </tile>
+  <tile id="474">
+   <image source="PNG/Tiles/tile_475.png" width="64" height="64"/>
+  </tile>
+  <tile id="475">
+   <image source="PNG/Tiles/tile_476.png" width="64" height="64"/>
+  </tile>
+  <tile id="476">
+   <image source="PNG/Tiles/tile_477.png" width="64" height="64"/>
+  </tile>
+  <tile id="477">
+   <image source="PNG/Tiles/tile_478.png" width="64" height="64"/>
+  </tile>
+  <tile id="478">
+   <image source="PNG/Tiles/tile_479.png" width="64" height="64"/>
+  </tile>
+  <tile id="479">
+   <image source="PNG/Tiles/tile_480.png" width="64" height="64"/>
+  </tile>
+  <tile id="480">
+   <image source="PNG/Tiles/tile_481.png" width="64" height="64"/>
+  </tile>
+  <tile id="481">
+   <image source="PNG/Tiles/tile_482.png" width="64" height="64"/>
+  </tile>
+  <tile id="482">
+   <image source="PNG/Tiles/tile_483.png" width="64" height="64"/>
+  </tile>
+  <tile id="483">
+   <image source="PNG/Tiles/tile_484.png" width="64" height="64"/>
+  </tile>
+  <tile id="486">
+   <image source="PNG/Tiles/tile_487.png" width="64" height="64"/>
+  </tile>
+  <tile id="487">
+   <image source="PNG/Tiles/tile_488.png" width="64" height="64"/>
+  </tile>
+  <tile id="488">
+   <image source="PNG/Tiles/tile_489.png" width="64" height="64"/>
+  </tile>
+  <tile id="489">
+   <image source="PNG/Tiles/tile_490.png" width="64" height="64"/>
+  </tile>
+  <tile id="490">
+   <image source="PNG/Tiles/tile_491.png" width="64" height="64"/>
+  </tile>
+  <tile id="491">
+   <image source="PNG/Tiles/tile_492.png" width="64" height="64"/>
+  </tile>
+  <tile id="492">
+   <image source="PNG/Tiles/tile_493.png" width="64" height="64"/>
+  </tile>
+  <tile id="493">
+   <image source="PNG/Tiles/tile_494.png" width="64" height="64"/>
+  </tile>
+  <tile id="494">
+   <image source="PNG/Tiles/tile_495.png" width="64" height="64"/>
+  </tile>
+  <tile id="495">
+   <image source="PNG/Tiles/tile_496.png" width="64" height="64"/>
+  </tile>
+  <tile id="496">
+   <image source="PNG/Tiles/tile_497.png" width="64" height="64"/>
+  </tile>
+  <tile id="497">
+   <image source="PNG/Tiles/tile_498.png" width="64" height="64"/>
+  </tile>
+  <tile id="498">
+   <image source="PNG/Tiles/tile_499.png" width="64" height="64"/>
+  </tile>
+  <tile id="499">
+   <image source="PNG/Tiles/tile_500.png" width="64" height="64"/>
+  </tile>
+  <tile id="500">
+   <image source="PNG/Tiles/tile_501.png" width="64" height="64"/>
+  </tile>
+  <tile id="501">
+   <image source="PNG/Tiles/tile_502.png" width="64" height="64"/>
+  </tile>
+  <tile id="502">
+   <image source="PNG/Tiles/tile_503.png" width="64" height="64"/>
+  </tile>
+  <tile id="503">
+   <image source="PNG/Tiles/tile_504.png" width="64" height="64"/>
+  </tile>
+  <tile id="504">
+   <image source="PNG/Tiles/tile_505.png" width="64" height="64"/>
+  </tile>
+  <tile id="505">
+   <image source="PNG/Tiles/tile_506.png" width="64" height="64"/>
+  </tile>
+  <tile id="506">
+   <image source="PNG/Tiles/tile_507.png" width="64" height="64"/>
+  </tile>
+  <tile id="507">
+   <image source="PNG/Tiles/tile_508.png" width="64" height="64"/>
+  </tile>
+  <tile id="508">
+   <image source="PNG/Tiles/tile_509.png" width="64" height="64"/>
+  </tile>
+  <tile id="509">
+   <image source="PNG/Tiles/tile_510.png" width="64" height="64"/>
+  </tile>
+  <tile id="510">
+   <image source="PNG/Tiles/tile_511.png" width="64" height="64"/>
+  </tile>
+  <tile id="513">
+   <image source="PNG/Tiles/tile_514.png" width="64" height="64"/>
+  </tile>
+  <tile id="514">
+   <image source="PNG/Tiles/tile_515.png" width="64" height="64"/>
+  </tile>
+  <tile id="515">
+   <image source="PNG/Tiles/tile_516.png" width="64" height="64"/>
+  </tile>
+  <tile id="516">
+   <image source="PNG/Tiles/tile_517.png" width="64" height="64"/>
+  </tile>
+  <tile id="517">
+   <image source="PNG/Tiles/tile_518.png" width="64" height="64"/>
+  </tile>
+  <tile id="518">
+   <image source="PNG/Tiles/tile_519.png" width="64" height="64"/>
+  </tile>
+  <tile id="519">
+   <image source="PNG/Tiles/tile_520.png" width="64" height="64"/>
+  </tile>
+  <tile id="520">
+   <image source="PNG/Tiles/tile_521.png" width="64" height="64"/>
+  </tile>
+  <tile id="521">
+   <image source="PNG/Tiles/tile_522.png" width="64" height="64"/>
+  </tile>
+  <tile id="522">
+   <image source="PNG/Tiles/tile_523.png" width="64" height="64"/>
+  </tile>
+  <tile id="523">
+   <image source="PNG/Tiles/tile_524.png" width="64" height="64"/>
+  </tile>
  </tileset>
- <tileset firstgid="2" source="tiles.tsx"/>
- <layer id="1" name="Floor" width="40" height="25">
+ <layer id="1" name="Floors" width="40" height="30">
   <data encoding="csv">
-1,1,1,1,1,1,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-1,1,1,1,1,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,278,278,278,278,278,278,278,278,278,278,278,278,278,2,
-1,1,1,5,5,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,99,99,99,99,99,99,99,99,99,99,99,99,278,2,
-1,1,1,5,5,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,99,99,99,99,99,99,99,99,99,99,99,99,278,2,
-1,1,1,1,1,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,99,99,99,99,99,99,99,99,99,99,99,99,278,2,
-1,1,1,1,1,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,99,99,99,99,99,99,99,99,99,99,99,99,278,2,
-1,1,1,1,1,1,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,2,2,2,2,278,99,99,99,99,99,99,99,99,99,99,99,99,278,2,
-278,278,278,278,278,278,278,70,70,70,70,70,70,278,72,72,72,72,72,72,278,5,5,5,5,278,99,99,99,99,278,278,278,278,278,278,278,278,278,2,
-278,301,301,301,301,301,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,278,278,279,279,279,279,279,279,279,2,2,
-278,301,301,301,301,301,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,278,278,278,279,279,279,279,279,279,2,2,
-278,301,301,301,301,301,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,278,278,278,278,278,278,278,323,278,278,2,
-278,301,301,301,301,301,279,279,279,94,94,94,94,94,94,94,94,94,94,94,94,94,94,278,279,279,279,279,279,278,323,323,323,323,323,323,323,323,278,2,
-278,301,301,301,301,301,279,279,333,333,20,20,20,20,20,20,20,20,20,20,20,20,279,333,279,279,279,279,279,278,323,323,323,323,323,323,323,323,278,2,
-278,301,301,301,301,301,279,279,333,333,20,20,20,20,20,20,20,20,20,20,20,20,333,333,279,279,279,279,278,323,323,323,323,323,323,323,323,323,278,2,
-278,301,301,301,301,301,279,279,333,333,20,20,20,20,20,20,20,20,20,20,20,20,333,333,279,279,279,278,278,323,323,323,323,323,323,323,323,323,278,2,
-278,278,278,278,278,278,279,279,279,278,94,94,94,94,94,94,94,94,94,94,94,94,278,279,279,279,279,278,279,323,323,323,323,323,323,323,323,323,278,2,
-2,2,2,2,18,278,279,279,279,278,371,372,372,372,372,372,372,372,372,372,372,373,278,279,279,279,279,278,278,278,278,278,278,278,278,278,278,278,278,2,
-18,5,18,2,18,278,279,279,279,278,398,399,399,399,399,399,399,399,399,399,399,400,278,279,279,279,179,179,179,179,179,179,179,179,179,179,179,179,179,2,
-18,2,2,2,18,278,279,279,279,278,398,399,399,399,399,399,399,399,399,399,399,400,278,279,279,279,179,179,179,179,179,179,179,179,179,179,179,179,179,2,
-2,2,18,18,18,278,279,279,279,278,425,426,426,426,426,278,426,426,426,426,426,427,278,279,279,279,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-278,278,278,278,278,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-4,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-4,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-4,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,278,2,2,2,2,2,2,2,2,2,2,2,2,2
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,278,279,1,98,98,98,98,98,98,98,1,1,1,1,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,278,7,7,7,7,330,1,98,98,98,98,98,98,98,1,1,1,1,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,329,7,7,7,7,330,1,98,98,98,98,98,98,98,1,1,1,1,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,329,7,7,7,7,330,1,98,98,98,98,98,98,98,1,9,9,9,9,9,9,9,9,9,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,305,357,357,357,357,306,1,98,98,98,98,98,98,98,1,9,9,9,9,9,9,9,9,9,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,9,1,1,1,1,1,1,9,45,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,373,374,374,374,374,374,374,375,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,400,1,1,1,1,1,1,402,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,427,428,428,428,428,428,428,429,1,1,1,1,1,1,45,45,45,45,45,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,370,371,371,371,371,372,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,397,398,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,424,398,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,42,42,42,42,42,42,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,42,42,42,42,42,42,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,42,42,42,42,42,42,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,42,42,42,42,42,42,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,42,42,42,42,42,42,1,1,1,1,1,397,398,398,398,399,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,42,42,42,42,42,42,0,0,42,42,42,42,1,1,1,1,1,424,425,425,425,426,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 </data>
  </layer>
- <layer id="6" name="outside_floor" width="40" height="25">
+ <layer id="2" name="Walls" width="40" height="30">
   <data encoding="csv">
-0,0,0,0,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,208,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,214,208,214,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,182,183,0,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,208,214,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,209,210,321,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,214,208,214,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,214,208,214,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,208,214,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-456,456,456,456,456,456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,130,0,0,130,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,157,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,208,208,208,208,208,208,208,208,208,208,159,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,0,0,0,0,159,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,184,184,184,184,184,184,184,184,184,184,159,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,159,159,159,159,159,159,159,159,159,159,159,159
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,109,111,111,111,111,111,111,1073741937,111,111,111,111,111,111,111,110,0,0,0,0,0,0,0,0,109,111,111,111,111,111,110,0,0,0,0,0,0,
+0,0,0,138,109,111,111,111,111,111,138,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,138,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,138,0,0,0,0,0,0,138,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,138,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,138,0,0,0,0,0,0,138,0,0,0,0,0,0,0,139,111,111,111,111,111,111,111,111,137,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,138,0,0,0,0,0,0,138,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,138,0,0,0,0,0,0,138,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,115,0,0,142,111,111,111,137,0,0,142,111,111,111,111,137,0,0,142,111,111,111,111,114,0,0,142,111,111,111,1610612849,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,151,120,120,120,120,120,120,119,0,0,303,465,465,304,273,273,276,465,465,303,0,0,0,0,141,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,147,0,0,300,0,0,0,0,0,0,0,0,300,0,0,0,0,138,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,147,0,0,300,0,0,484,484,484,484,484,0,300,0,0,0,0,138,0,0,0,0,0,138,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,147,0,0,300,0,0,477,0,477,0,477,0,300,0,0,0,0,115,0,0,0,0,0,115,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,147,0,0,298,273,273,273,273,273,273,273,273,299,0,0,0,0,313,282,282,282,282,282,281,0,0,0,0,0,0,
+0,0,0,151,120,120,120,120,120,120,146,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,151,120,120,120,120,120,123,109,0,0,142,111,111,111,111,111,111,111,111,111,110,313,282,282,281,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,492,0,0,0,0,0,0,0,0,0,0,0,0,138,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,492,0,0,0,0,0,0,0,0,0,0,0,0,115,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,492,0,0,0,0,0,0,0,0,0,0,0,0,491,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,138,0,0,0,0,0,0,42,42,0,0,0,0,491,0,0,0,309,0,0,0,0,0,309,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,136,111,518,518,518,111,111,111,111,111,111,111,111,137,0,0,0,307,282,282,282,282,282,308,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="7" name="Wall" width="40" height="25">
+ <layer id="4" name="Furniture" width="40" height="30">
   <data encoding="csv">
-0,0,0,0,0,0,142,112,112,112,112,112,112,0,112,112,112,112,112,112,142,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,368,283,283,283,283,283,283,283,283,283,283,283,283,368,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,310,0,0,0,0,0,0,0,0,0,0,0,0,340,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,310,0,0,0,0,0,0,0,0,0,0,0,0,340,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,310,0,0,0,0,0,0,0,0,0,0,0,0,340,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,310,0,0,0,0,0,0,0,0,0,0,0,0,340,0,
-0,0,0,0,0,0,139,0,0,0,0,0,0,378,0,0,0,0,0,0,139,0,0,0,0,310,0,0,0,0,0,0,0,0,0,0,0,0,340,0,
-151,121,121,121,121,124,116,0,0,0,0,0,0,378,0,0,0,0,0,0,116,466,466,466,466,368,0,0,0,0,368,283,283,283,283,283,283,283,368,0,
-148,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,492,0,
-148,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,492,0,
-148,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,371,372,372,372,372,372,372,372,372,373,0,
-148,512,0,0,0,0,0,0,0,491,491,491,491,491,491,491,491,491,491,491,491,491,491,0,0,0,0,0,0,398,0,0,0,0,0,0,0,0,400,0,
-148,512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,398,0,0,0,0,0,0,0,0,400,0,
-148,0,502,504,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400,0,
-148,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400,0,
-125,205,205,205,205,151,0,0,0,441,491,491,491,491,491,491,491,491,491,491,491,491,440,0,0,0,0,0,0,0,0,0,0,502,504,0,0,0,400,0,
-0,0,0,0,0,148,0,0,0,441,0,0,0,0,0,0,0,0,0,0,0,0,440,0,0,0,0,426,426,426,426,426,426,426,426,426,426,426,427,0,
-0,0,0,0,0,148,0,0,0,441,0,0,0,0,0,0,0,0,0,0,0,0,440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,148,0,0,0,441,0,0,0,0,0,0,0,0,0,0,0,0,440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,148,0,0,0,441,0,0,0,0,0,378,0,0,0,0,0,0,440,0,0,0,438,465,465,465,465,465,465,465,465,465,465,465,465,0,
-121,121,121,121,121,0,0,0,0,0,0,0,0,0,0,441,0,0,0,0,0,0,0,0,0,0,438,0,0,0,0,0,0,0,0,0,0,0,0,0,
-493,0,0,0,0,0,0,0,0,0,0,0,0,0,0,441,0,0,0,0,0,0,0,0,0,0,438,0,0,0,0,0,0,0,0,0,0,0,0,0,
-493,0,0,0,0,0,0,0,0,0,0,0,0,0,0,441,0,0,0,0,0,0,0,0,0,0,438,0,0,0,0,0,0,0,0,0,0,0,0,0,
-493,0,0,0,0,0,0,0,0,0,0,0,0,0,0,441,0,0,0,0,0,0,0,0,0,0,438,0,0,0,0,0,0,0,0,0,0,0,0,0,
-484,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,431,484,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,324,297,323,296,321,321,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,453,455,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,505,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1073742271,1073742272,1073742273,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,2684355061,0,1073742275,1073742275,0,0,2684355061,0,536871423,0,536871155,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,3758096886,0,480,482,0,0,2684355063,0,536871423,0,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,2684355063,0,450,450,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,447,448,449,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="Kitchen" width="40" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,269,0,0,0,0,3221225576,3221225575,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,77,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1610612787,1610612841,0,0,0,0,0,0,0,
+0,0,0,0,0,241,215,0,0,0,0,0,0,132,3221225522,3221225521,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,478,478,0,268,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1610612787,1610612841,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,93,93,0,0,0,0,0,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,0,0,0,0,0,0,0,0,93,93,93,93,0,0,0,0,1610612784,1610612838,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,0,0,0,0,0,0,0,0,93,93,93,93,0,0,132,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,2684355011,318,317,318,317,318,1610613187,0,93,93,93,93,0,0,0,0,1610612784,1610612838,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,0,0,505,0,505,0,0,0,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,0,0,0,0,0,0,0,0,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,93,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,214,268,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="Outside" width="40" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,235,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,236,235,0,0,
+0,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,197,0,0,0,0,0,0,0,0,0,238,0,239,238,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,235,0,239,0,0,
+0,238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,262,240,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,0,
+0,238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,0,240,
+236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,133,0,0,0,0,0,0,0,0,0,262,240,0,236,0,
+0,0,0,134,134,134,134,134,134,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,133,0,0,0,0,0,0,0,0,0,0,0,0,240,0,
+0,262,0,0,0,0,0,0,0,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,133,0,0,0,0,0,0,0,0,0,0,236,0,0,0,
+0,240,0,0,0,0,0,0,0,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,133,0,0,0,0,0,0,0,0,0,262,0,0,0,262,
+0,0,0,134,134,134,134,134,134,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,133,0,0,0,0,0,0,0,0,0,0,0,240,239,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+262,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,238,0,0,
+0,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,0,0,236,0,
+0,0,0,0,197,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+262,0,0,0,0,0,213,0,262,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,0,0,0,0,0,0,0,0,236,238,262,0,
+0,0,240,0,213,238,0,210,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,183,0,183,0,0,0,213,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,238,0,
+0,0,183,0,0,213,238,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,236,0,
+0,183,0,183,236,0,0,210,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,183,0,0,213,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240,0,0,0,240,0,
+0,183,0,183,240,0,238,0,210,0,0,0,210,0,0,238,0,210,0,240,0,210,0,0,0,236,0,210,238,0,0,240,0,0,0,236,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,236,0,0,0,0,0,0,0,0,238,0,0,0,0,0,0,236,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="3" name="Objects">
-  <object id="1" name="player" x="98.9091" y="596" width="64" height="64"/>
-  <object id="2" name="zombie" x="169.333" y="1393.33" width="64" height="64"/>
-  <object id="3" name="zombie" x="2300.73" y="173.333" width="64" height="64"/>
-  <object id="30" name="zombie" x="2324.73" y="837.333" width="64" height="64"/>
-  <object id="4" name="wall" x="376.606" y="-0.969697" width="76.1212" height="511.879"/>
-  <object id="9" name="wall" x="325.212" y="966.788" width="64" height="304"/>
-  <object id="17" name="wall" x="-2.78788" y="1350.79" width="64" height="164"/>
-  <object id="11" name="wall" x="1602.3" y="125.333" width="64" height="384"/>
-  <object id="10" name="wall" x="1284.36" y="3.63636" width="64" height="428"/>
-  <object id="31" name="wall" x="1284.36" y="3.63636" width="64" height="428"/>
-  <object id="5" name="wall" x="464.485" y="-0.969697" width="804" height="64"/>
-  <object id="6" name="wall" x="-0.727273" y="1525.7" width="1740.24" height="70.0606"/>
-  <object id="14" name="wall" x="1726.06" y="1017.58" width="753.455" height="67.0303"/>
-  <object id="19" name="wall" x="1739.27" y="1213.7" width="756.242" height="70.0606"/>
-  <object id="20" name="wall" x="651.273" y="957.697" width="752.242" height="70.0606"/>
-  <object id="28" name="wall" x="567.273" y="701.697" width="916.242" height="70.0606"/>
-  <object id="15" name="wall" x="7.27273" y="441.697" width="368.242" height="70.0606"/>
-  <object id="33" name="wall" x="122.061" y="827.394" width="133.212" height="64"/>
-  <object id="34" name="wall" x="2103.27" y="953.697" width="136.242" height="70.0606"/>
-  <object id="13" name="wall" x="1611.27" y="53.697" width="821.576" height="63.0303"/>
-  <object id="12" name="wall" x="1287.27" y="437.697" width="304.242" height="70.0606"/>
-  <object id="26" name="wall" x="1915.15" y="637.697" width="512.606" height="70.0606"/>
-  <object id="25" name="wall" x="1920.24" y="448.848" width="504.485" height="54.9091"/>
-  <object id="16" name="wall" x="7.27273" y="965.697" width="304.242" height="70.0606"/>
-  <object id="18" name="wall" x="7.27273" y="1269.7" width="304.242" height="70.0606"/>
-  <object id="7" name="wall" x="8.9697" y="506.182" width="56" height="456"/>
-  <object id="21" name="wall" x="832.97" y="70.1818" width="56" height="428"/>
-  <object id="32" name="wall" x="68.7273" y="712.485" width="56" height="113.697"/>
-  <object id="22" name="wall" x="584.97" y="962.182" width="56" height="308"/>
-  <object id="27" name="wall" x="1856.97" y="639.152" width="56" height="192.121"/>
-  <object id="23" name="wall" x="1400.97" y="962.182" width="80" height="316"/>
-  <object id="29" name="wall" x="960.97" y="1202.18" width="58.7879" height="316"/>
-  <object id="24" name="wall" x="1671.15" y="1222.18" width="61.8182" height="292"/>
-  <object id="8" name="wall" x="2432.61" y="61.3333" width="67.0303" height="960"/>
+  <object id="1" name="player" x="482.667" y="287.333" width="64" height="64"/>
+  <object id="2" name="zombie" x="16" y="28" width="64" height="64"/>
+  <object id="3" name="zombie" x="1944" y="1508" width="64" height="64"/>
+  <object id="4" name="zombie" x="1857.09" y="512.091" width="254.455" height="64"/>
+  <object id="21" name="zombie" x="1989.09" y="705.424" width="123.788" height="64"/>
+  <object id="22" name="zombie" x="1989.09" y="832.091" width="123.788" height="64"/>
+  <object id="23" name="zombie" x="1987.76" y="254.758" width="123.788" height="64"/>
+  <object id="24" name="zombie" x="1985.09" y="381.424" width="123.788" height="64"/>
+  <object id="5" name="zombie" x="1889.33" y="298" width="64" height="64"/>
+  <object id="10" name="wall" x="832" y="510" width="318" height="64"/>
+  <object id="19" name="wall" x="896.667" y="192.667" width="125.333" height="184.667"/>
+  <object id="20" name="wall" x="831.333" y="318.667" width="258" height="65.3333"/>
+  <object id="14" name="wall" x="896" y="1473.33" width="129.333" height="64"/>
+  <object id="16" name="wall" x="384.667" y="511.333" width="319.333" height="64"/>
+  <object id="17" name="wall" x="192" y="127.667" width="959.667" height="64"/>
+  <object id="19" name="wall" x="896" y="1408.67" width="129.333" height="64"/>
+  <object id="20" name="wall" x="1215.67" y="320" width="511.667" height="64"/>
+  <object id="22" name="wall" x="1151.67" y="384" width="64" height="194"/>
+  <object id="24" name="wall" x="640" y="190.667" width="64" height="322"/>
+  <object id="25" name="wall" x="1152.33" y="128.333" width="62.6667" height="256"/>
+  <object id="28" name="wall" x="704" y="1664.33" width="831.5" height="64"/>
+  <object id="29" name="wall" x="639.394" y="704.636" width="64" height="318.333"/>
+  <object id="32" name="wall" x="1345" y="511.667" width="382.333" height="64"/>
+  <object id="16" name="wall" x="251.061" y="193.485" width="390.333" height="64"/>
+  <object id="17" name="wall" x="314.697" y="311.667" width="127.788" height="130.667"/>
+  <object id="18" name="wall" x="512.939" y="385.303" width="63.2424" height="123.394"/>
+  <object id="33" name="wall" x="897.333" y="1536" width="127.333" height="64"/>
+  <object id="34" name="wall" x="832" y="708" width="64" height="312"/>
+  <object id="35" name="wall" x="192" y="192.333" width="64" height="383.333"/>
+  <object id="36" name="wall" x="1408.33" y="704" width="64" height="256.333"/>
+  <object id="37" name="wall" x="1214" y="1598.67" width="194" height="64"/>
+  <object id="12" name="wall" x="1215.48" y="1409.98" width="124.604" height="56.0003" rotation="90.4682"/>
+  <object id="13" name="wall" x="1283.48" y="1534.63" width="124.604" height="61.3661" rotation="-90.4682"/>
+  <object id="14" name="wall" x="1470.69" y="1343.38" width="187.257" height="61.3661" rotation="90.4682"/>
+  <object id="15" name="wall" x="1406.99" y="1285.15" width="57.5796" height="187.157" rotation="90.4682"/>
+  <object id="38" name="wall" x="896" y="960" width="572" height="64"/>
+  <object id="11" name="wall" x="831.894" y="1216.64" width="636.485" height="64"/>
+  <object id="39" name="wall" x="769.333" y="1408" width="62" height="191.333"/>
+  <object id="40" name="wall" x="1728.91" y="703.697" width="64" height="255.515"/>
+  <object id="41" name="wall" x="1024.33" y="703.667" width="255.667" height="64"/>
+  <object id="42" name="wall" x="192" y="704" width="446.333" height="64"/>
+  <object id="43" name="wall" x="191.333" y="1215.33" width="448" height="64"/>
+  <object id="44" name="wall" x="640.182" y="1214.73" width="64" height="513.333"/>
+  <object id="45" name="wall" x="1536.68" y="1217.03" width="192.25" height="64"/>
+  <object id="46" name="wall" x="1794.98" y="1663.91" width="381.47" height="64"/>
+  <object id="47" name="wall" x="1793.11" y="128.53" width="318.545" height="64"/>
+  <object id="48" name="wall" x="1470.31" y="1215.95" width="64" height="448"/>
+  <object id="10" name="wall" x="1729.4" y="1216.7" width="64" height="511.75"/>
+  <object id="49" name="wall" x="2112.76" y="127.273" width="64" height="1537.47"/>
+  <object id="50" name="wall" x="1728.21" y="960.788" width="384.939" height="64"/>
+  <object id="51" name="wall" x="191.242" y="1024" width="512.667" height="64"/>
+  <object id="52" name="wall" x="1728.06" y="128.364" width="64" height="254.788"/>
  </objectgroup>
 </map>

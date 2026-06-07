@@ -68,14 +68,24 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         
-        # Load the Kenney asset for the player
-        try:
-            self.image = pygame.image.load("../assets/PNG/Survivor 1/survivor1_stand.png").convert_alpha()
-        except FileNotFoundError:
-            # Fallback if path is wrong
-            self.image = pygame.Surface((TILESIZE, TILESIZE))
-            self.image.fill((0, 255, 0)) # Green box
-            
+        # Grab frames from our new spritesheet loader
+        self.frames = {
+            'idle': self.game.chars_spritesheet.get_image('survivor1_stand.png'),
+            'stand': self.game.chars_spritesheet.get_image('survivor1_stand.png'),
+            'gun': self.game.chars_spritesheet.get_image('survivor1_gun.png'),
+            'machine': self.game.chars_spritesheet.get_image('survivor1_machine.png'),
+            'reload': self.game.chars_spritesheet.get_image('survivor1_reload.png')
+        }
+        
+        # Fallback if XML failed
+        if not self.frames['gun']:
+            self.frames['gun'] = pygame.Surface((TILESIZE, TILESIZE))
+            self.frames['gun'].fill((0, 255, 0))
+            self.frames['stand'] = self.frames['gun']
+            self.frames['machine'] = self.frames['gun']
+            self.frames['idle'] = self.frames['gun']
+
+        self.image = self.frames['gun']
         self.orig_image = self.image
         self.rect = self.image.get_rect()
         
@@ -89,18 +99,63 @@ class Player(pygame.sprite.Sprite):
         self.rot = 0
         self.last_shot = 0
         self.vx, self.vy = 0, 0
+        self.health = PLAYER_HEALTH
+        
+        # Animation variables
+        self.state = 'idle'
+        self.is_running = False
+        self.last_anim_update = 0
+        self.anim_frame = 0
 
     def get_keys(self):
         self.vx, self.vy = 0, 0
         keys = pygame.key.get_pressed()
+        
+        # Check if running
+        self.is_running = keys[pygame.K_LSHIFT]
+        current_speed = PLAYER_RUN_SPEED if self.is_running else PLAYER_SPEED
+        
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-            self.vx = -PLAYER_SPEED
+            self.vx = -current_speed
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-            self.vx = PLAYER_SPEED
+            self.vx = current_speed
         if keys[pygame.K_UP] or keys[pygame.K_w]:
-            self.vy = -PLAYER_SPEED
+            self.vy = -current_speed
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-            self.vy = PLAYER_SPEED
+            self.vy = current_speed
+            
+        if self.vx != 0 and self.vy != 0:
+            # Normalize diagonal speed so you don't move faster diagonally
+            self.vx *= 0.7071
+            self.vy *= 0.7071
+
+    def animate(self):
+        now = pygame.time.get_ticks()
+        
+        # 1. Determine State
+        if now - self.last_shot < 100:
+            self.state = 'shooting'
+        elif self.vx != 0 or self.vy != 0:
+            self.state = 'running' if self.is_running else 'moving'
+        else:
+            self.state = 'idle'
+            
+        # 2. Process Animation Frames based on state
+        if self.state == 'shooting':
+            self.orig_image = self.frames['machine']
+        elif self.state == 'idle':
+            self.orig_image = self.frames['gun']
+        elif self.state == 'moving' or self.state == 'running':
+            # Swap between stand and gun to simulate shoulder bob/arms pumping
+            anim_speed = 100 if self.state == 'running' else 200
+            if now - self.last_anim_update > anim_speed:
+                self.last_anim_update = now
+                self.anim_frame = (self.anim_frame + 1) % 2
+            
+            if self.anim_frame == 0:
+                self.orig_image = self.frames['gun']
+            else:
+                self.orig_image = self.frames['stand']
 
     def collide_with_walls(self, dir):
         if dir == 'x':
@@ -124,6 +179,7 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.get_keys()
+        self.animate()
         
         # Mouse rotation based on the fixed position
         mouse_pos = pygame.mouse.get_pos()
@@ -158,14 +214,25 @@ class Player(pygame.sprite.Sprite):
         if now - self.last_shot > BULLET_RATE:
             self.last_shot = now
             Bullet(self.game, self.rect.centerx, self.rect.centery, self.rot)
+            if getattr(self.game, 'shoot_snd', None):
+                self.game.shoot_snd.play()
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, game, x, y, angle):
         self.groups = game.all_sprites, game.bullets
         pygame.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = pygame.Surface((10, 10))
-        self.image.fill((255, 255, 0)) # Yellow square
+        
+        try:
+            # We use the silencer sprite as a bullet tracer since it's a nice horizontal grey cylinder
+            self.orig_image = pygame.image.load("assets/PNG/weapon_silencer.png").convert_alpha()
+            # Optional: Tint it yellow to look like a glowing tracer round
+            self.orig_image.fill((255, 200, 0, 255), special_flags=pygame.BLEND_RGBA_MULT)
+        except FileNotFoundError:
+            self.orig_image = pygame.Surface((15, 5), pygame.SRCALPHA)
+            self.orig_image.fill((255, 255, 0))
+            
+        self.image = pygame.transform.rotate(self.orig_image, angle)
         self.rect = self.image.get_rect()
         self.pos = pygame.math.Vector2(x, y)
         self.rect.center = round(self.pos.x), round(self.pos.y)
