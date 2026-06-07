@@ -8,8 +8,17 @@ class Player:
         self.screen_height = screen_height
         self.width = 50
         self.height = 50
-        self.color = (255, 255, 255)  # White
         self.speed = 5
+        
+        # Load and scale the player image
+        try:
+            self.image = pygame.image.load("assets/aim.png")
+            self.image = pygame.transform.scale(self.image, (self.width, self.height))
+        except pygame.error as e:
+            print(f"Could not load image: {e}")
+            # Fallback to a surface if image fails to load
+            self.image = pygame.Surface((self.width, self.height))
+            self.image.fill((255, 255, 255))
 
     def handle_keys(self):
         keys = pygame.key.get_pressed()
@@ -25,5 +34,6 @@ class Player:
             self.y += self.speed
 
     def draw(self, surface):
-        # Draw the player as a simple rectangle
-        pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
+        # Draw the player image
+        surface.blit(self.image, (self.x, self.y))
+
