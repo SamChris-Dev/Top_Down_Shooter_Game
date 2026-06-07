@@ -5,18 +5,20 @@ from player_movement import Player
 # 1. Initialize Pygame
 pygame.init()
 
-# 2. Set up the display (Width, Height)
+# 2. Set up the display
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Top-Down-Shooter!")
 
-# 3. Colors (RGB)
+# 3. Colors
 BLUE = (30, 144, 255)
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
 
-# 4. Initialize Player
+# 4. Initialize Player and Sprite Group
 player = Player(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
+
+# Create a group and add the player to it
+all_sprites = pygame.sprite.Group()
+all_sprites.add(player)
 
 # 5. Clock to control frame rate
 clock = pygame.time.Clock()
@@ -29,14 +31,15 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Handle Player Movement
-    player.handle_keys()
+    # Update all sprites in the group simultaneously
+    # This automatically calls the update() method we defined in the Player class
+    all_sprites.update()
 
     # Fill the screen with color
     screen.fill(BLUE)
 
-    # Draw Player
-    player.draw(screen)
+    # Draw all sprites in the group to the screen automatically
+    all_sprites.draw(screen)
 
     # Update the display
     pygame.display.flip()
