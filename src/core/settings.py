@@ -3,7 +3,7 @@ import pygame
 # Screen settings
 WIDTH, HEIGHT = 1024, 768
 FPS = 60
-TITLE = "Top Down Shooter - Refactored"
+TITLE = "Top Down Shooter"
 
 # Colors
 BG_COLOR = (40, 40, 40)
