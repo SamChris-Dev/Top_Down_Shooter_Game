@@ -1,17 +1,15 @@
 import sys
 import os
 
-# This forces Python to recognize the 'src' folder as the working directory
+# Add src folder to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from engine import Game
+from core.engine import Game
 
 if __name__ == "__main__":
-    # Instantiate the engine
     g = Game()
-    g.show_start_screen()
+    g.menu.show_start_screen()
     
-    # Run the main menu or game loop
     while g.running:
         g.new()
-        g.show_go_screen()
+        g.menu.show_go_screen()

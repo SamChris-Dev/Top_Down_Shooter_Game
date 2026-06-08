@@ -1,4 +1,3 @@
-# src/settings.py
 import pygame
 
 # Screen settings
@@ -11,16 +10,25 @@ BG_COLOR = (40, 40, 40)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
+LIGHT_GRAY = (100, 100, 100)
+DARK_GRAY = (50, 50, 50)
 
-# Grid Settings (Kenney tiles are usually 64x64 or 128x128)
+# Grid Settings
 TILESIZE = 64
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
+# Camera settings
+CAMERA_LERP_SPEED = 0.1
+
 # Player Settings
-PLAYER_SPEED = 300 # Pixels per second (because we will use Delta Time)
+PLAYER_SPEED = 300 
 PLAYER_RUN_SPEED = 500
 PLAYER_HEALTH = 100
+PLAYER_HIT_RECT = pygame.Rect(0, 0, 35, 35)
 
 # Bullet Settings
 BULLET_SPEED = 500
@@ -32,3 +40,12 @@ BULLET_DAMAGE = 25
 ZOMBIE_SPEED = 75
 ZOMBIE_HEALTH = 100
 ZOMBIE_DAMAGE = 10
+ZOMBIE_HIT_RECT = pygame.Rect(0, 0, 35, 35)
+ZOMBIE_VISION_RANGE = 500
+ZOMBIE_ATTACK_RANGE = 40
+ZOMBIE_ATTACK_COOLDOWN = 1000
+
+# Audio Settings
+DEFAULT_MASTER_VOLUME = 1.0
+DEFAULT_MUSIC_VOLUME = 0.5
+DEFAULT_SFX_VOLUME = 0.8
