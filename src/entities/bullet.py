@@ -52,6 +52,12 @@ class Bullet(pygame.sprite.Sprite):
             
         if pygame.time.get_ticks() - self.spawn_time > self.lifetime:
             self.kill()
+            
+        # Screen bounds check
+        cam = self.game.camera.camera
+        if not (-cam.x - 200 < self.pos.x < -cam.x + WIDTH + 200 and 
+                -cam.y - 200 < self.pos.y < -cam.y + HEIGHT + 200):
+            self.kill()
 
 class BulletPool:
     def __init__(self, game, pool_size=50):

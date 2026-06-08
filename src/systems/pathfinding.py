@@ -1,58 +1,83 @@
 import math
-import heapq
+import pygame
+from collections import deque
 from core.settings import TILESIZE
 
 def heuristic(a, b):
-    # Euclidean distance
     return math.hypot(a[0] - b[0], a[1] - b[1])
 
-def get_path(game, start, goal):
-    # start and goal are (x, y) grid coordinates
-    frontier = []
-    heapq.heappush(frontier, (0, start))
-    came_from = {}
-    cost_so_far = {}
-    came_from[start] = None
-    cost_so_far[start] = 0
-    
-    while frontier:
-        current = heapq.heappop(frontier)[1]
+class FlowField:
+    def __init__(self, game):
+        self.game = game
+        self.grid_width = game.grid_width
+        self.grid_height = game.grid_height
+        self.flow_grid = [[pygame.math.Vector2(0, 0) for _ in range(self.grid_width)] for _ in range(self.grid_height)]
+        self.target_grid_pos = None
+
+    def update_field(self, target_grid_pos):
+        # Only recalculate if the target has actually moved to a new grid cell
+        if self.target_grid_pos == target_grid_pos:
+            return 
+            
+        self.target_grid_pos = target_grid_pos
+
+        # 1. Generate Integration Field (BFS/Dijkstra)
+        cost_grid = [[float('inf') for _ in range(self.grid_width)] for _ in range(self.grid_height)]
+        queue = deque()
         
-        if current == goal:
-            break
-            
-        # 8 directions
-        for dx, dy in [(0, -1), (0, 1), (-1, 0), (1, 0), (1, 1), (-1, 1), (1, -1), (-1, -1)]:
-            next_node = (current[0] + dx, current[1] + dy)
-            
-            # Check boundaries
-            if 0 <= next_node[0] < game.grid_width and 0 <= next_node[1] < game.grid_height:
-                # Check if it's a wall
-                if game.pathfinding_grid[next_node[1]][next_node[0]] == '1':
-                    continue
-                    
-                # Prevent cutting corners on diagonals
-                if dx != 0 and dy != 0:
-                    if game.pathfinding_grid[current[1]+dy][current[0]] == '1' or game.pathfinding_grid[current[1]][current[0]+dx] == '1':
-                        continue
+        tx, ty = target_grid_pos
+        if 0 <= tx < self.grid_width and 0 <= ty < self.grid_height:
+            cost_grid[ty][tx] = 0
+            queue.append((tx, ty))
+
+        # Neighbors: N, S, E, W, NE, NW, SE, SW
+        dirs = [(0, -1), (0, 1), (-1, 0), (1, 0), (1, -1), (-1, -1), (1, 1), (-1, 1)]
+        
+        while queue:
+            cx, cy = queue.popleft()
+            current_cost = cost_grid[cy][cx]
+
+            for dx, dy in dirs:
+                nx, ny = cx + dx, cy + dy
+                if 0 <= nx < self.grid_width and 0 <= ny < self.grid_height:
+                    if self.game.pathfinding_grid[ny][nx] == '1':
+                        continue # Wall
                         
-                cost = 1.414 if dx != 0 and dy != 0 else 1
-                new_cost = cost_so_far[current] + cost
+                    # Diagonal wall check (prevent cutting corners)
+                    if dx != 0 and dy != 0:
+                        if self.game.pathfinding_grid[cy+dy][cx] == '1' or self.game.pathfinding_grid[cy][cx+dx] == '1':
+                            continue
+
+                    move_cost = 1.414 if dx != 0 and dy != 0 else 1
+                    new_cost = current_cost + move_cost
+
+                    if new_cost < cost_grid[ny][nx]:
+                        cost_grid[ny][nx] = new_cost
+                        queue.append((nx, ny))
+
+        # 2. Generate Vector Flow Field
+        for y in range(self.grid_height):
+            for x in range(self.grid_width):
+                if self.game.pathfinding_grid[y][x] == '1':
+                    continue
+
+                min_cost = float('inf')
+                best_dir = pygame.math.Vector2(0, 0)
+
+                for dx, dy in dirs:
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < self.grid_width and 0 <= ny < self.grid_height:
+                        if cost_grid[ny][nx] < min_cost:
+                            min_cost = cost_grid[ny][nx]
+                            if dx != 0 or dy != 0:
+                                best_dir = pygame.math.Vector2(dx, dy).normalize()
                 
-                if next_node not in cost_so_far or new_cost < cost_so_far[next_node]:
-                    cost_so_far[next_node] = new_cost
-                    priority = new_cost + heuristic(next_node, goal)
-                    heapq.heappush(frontier, (priority, next_node))
-                    came_from[next_node] = current
-                    
-    # Reconstruct path
-    current = goal
-    path = []
-    if goal not in came_from:
-        return [] # No path found
-        
-    while current != start:
-        path.append(current)
-        current = came_from[current]
-    path.reverse() # reverse to get path from start to goal
-    return path
+                self.flow_grid[y][x] = best_dir
+
+    def get_dir(self, pos):
+        """O(1) lookup of the flow direction for a given world position."""
+        grid_x = int(pos.x // TILESIZE)
+        grid_y = int(pos.y // TILESIZE)
+        if 0 <= grid_x < self.grid_width and 0 <= grid_y < self.grid_height:
+            return self.flow_grid[grid_y][grid_x]
+        return pygame.math.Vector2(0, 0)

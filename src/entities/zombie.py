@@ -2,7 +2,6 @@ import pygame
 import math
 from core.settings import *
 from systems.collision import collide_with_walls
-from systems.pathfinding import get_path
 
 class ZombieState:
     IDLE = 0
@@ -97,28 +96,9 @@ class Zombie(pygame.sprite.Sprite):
             self.move_towards(target_pos)
             
         elif self.state == ZombieState.IDLE:
-            # Maybe pathfind to player if lost sight but still close?
-            if now - self.last_path_time > 1000:
-                self.last_path_time = now
-                start_grid = (int(self.pos.x // TILESIZE), int(self.pos.y // TILESIZE))
-                goal_grid = (int(self.game.player.pos.x // TILESIZE), int(self.game.player.pos.y // TILESIZE))
-                
-                if start_grid != goal_grid:
-                    self.path = get_path(self.game, start_grid, goal_grid)
-                else:
-                    self.path = []
-
-            if self.path:
-                next_tile = self.path[0]
-                target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
-                
-                if self.pos.distance_to(target_pos) < 15:
-                    self.path.pop(0)
-                    if self.path:
-                        next_tile = self.path[0]
-                        target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
-                    else:
-                        target_pos = self.game.player.pos
+            target_dir = self.game.flow_field.get_dir(self.pos)
+            if target_dir.length_squared() > 0:
+                target_pos = self.pos + target_dir * 100
                 self.move_towards(target_pos)
             else:
                 self.vel = pygame.math.Vector2(0, 0)

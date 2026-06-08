@@ -13,6 +13,7 @@ from entities.player import Player
 from entities.zombie import Zombie
 from entities.obstacle import Obstacle
 from entities.bullet import BulletPool
+from systems.pathfinding import FlowField
 from systems.wave_manager import WaveManager
 from systems.effects import screen_shake, spawn_particles
 from ui.hud import HUD
@@ -53,6 +54,9 @@ class Game:
             for y in range(start_y, end_y + 1):
                 for x in range(start_x, end_x + 1):
                     self.pathfinding_grid[y][x] = '1'
+                    
+        # Initialize Flow Field
+        self.flow_field = FlowField(self)
 
     def new(self):
         self.all_sprites = pygame.sprite.LayeredUpdates()
@@ -94,6 +98,10 @@ class Game:
         self.all_sprites.update()
         if hasattr(self, 'player'):
             self.camera.update(self.player)
+            
+            # Update Flow Field based on player position
+            target_grid = (int(self.player.pos.x // TILESIZE), int(self.player.pos.y // TILESIZE))
+            self.flow_field.update_field(target_grid)
             
         self.wave_manager.update()
         

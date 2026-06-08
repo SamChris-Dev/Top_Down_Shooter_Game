@@ -1,6 +1,7 @@
 import pygame
 import random
 from systems.audio import audio_manager
+from systems.effects import spawn_particles
 
 class Weapon:
     def __init__(self, game, name, damage, fire_rate, spread, bullet_speed, lifetime, sound_name):
@@ -27,10 +28,13 @@ class Weapon:
                 x, y, final_angle, self.damage, self.bullet_speed, self.lifetime
             )
             
-            # Play sound
+            # Muzzle flash
+            spawn_particles(self.game, x, y, (255, 255, 0), count=3, duration=50, speed_range=(20, 50), size_range=(3, 6))
+            
+            # Play sound with dynamic volume for variety
             snd = self.game.asset_manager.load_sound(self.sound_name)
             if snd:
-                audio_manager.play_sound(snd)
+                audio_manager.play_sound(snd, volume_scale=random.uniform(0.8, 1.0))
                 
             return True # Shot fired
         return False
@@ -56,9 +60,12 @@ class Shotgun(Weapon):
                     x, y, final_angle, self.damage, speed, self.lifetime
                 )
                 
+            # Muzzle flash
+            spawn_particles(self.game, x, y, (255, 255, 0), count=8, duration=50, speed_range=(30, 80), size_range=(3, 6))
+            
             snd = self.game.asset_manager.load_sound(self.sound_name)
             if snd:
-                audio_manager.play_sound(snd)
+                audio_manager.play_sound(snd, volume_scale=random.uniform(0.8, 1.0))
             return True
         return False
 
