@@ -255,6 +255,30 @@ class Bullet(pygame.sprite.Sprite):
         if pygame.time.get_ticks() - self.spawn_time > BULLET_LIFETIME:
             self.kill()
 
+class BulletPool:
+    def __init__(self, game, pool_size=50):
+        self.game = game
+        # Pre-allocate bullet instances off-screen
+        self.pool = [Bullet(game, -1000, -1000, 0) for _ in range(pool_size)]
+        
+        # Immediately "kill" them so they aren't updated or drawn
+        for bullet in self.pool:
+            bullet.kill()
+
+    def get_bullet(self, x, y, angle):
+        # Find the first inactive bullet
+        for bullet in self.pool:
+            if not bullet.alive():
+                bullet.fire(x, y, angle)
+                return bullet
+        
+        # Optional: Dynamically expand the pool if we run out
+        new_bullet = Bullet(self.game, x, y, angle)
+        self.pool.append(new_bullet)
+        new_bullet.fire(x, y, angle)
+        return new_bullet
+
+
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self, game, x, y, w, h):
         self.groups = game.walls
@@ -273,7 +297,7 @@ class Zombie(pygame.sprite.Sprite):
         self.game = game
 
         try:
-            self.image = pygame.image.load("../assets/PNG/Zombie 1/zoimbie1_stand.png").convert_alpha()
+            self.image = pygame.image.load("assets/PNG/Zombie 1/zoimbie1_stand.png").convert_alpha()
         except FileNotFoundError:
             self.image = pygame.Surface((TILESIZE, TILESIZE))
             self.image.fill((255, 0, 0)) # Red box for zombie
