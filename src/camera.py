@@ -17,9 +17,21 @@ class Camera:
         return rect.move(self.camera.topleft)
 
     def update(self, target):
-        # Center the camera on the target (usually the player)
-        x = -target.rect.centerx + int(WIDTH / 2)
-        y = -target.rect.centery + int(HEIGHT / 2)
+       # Target coordinates where we WANT the camera to be
+        target_x = -target.rect.centerx + int(WIDTH / 2)
+        target_y = -target.rect.centery + int(HEIGHT / 2)
 
-        # Update the camera's offset rectangle
-        self.camera = pygame.Rect(x, y, self.width, self.height)
+        # Lerp factor (lower = smoother/slower, 1.0 = instant snap)
+        # Multiply by delta time in engine for frame-independent lerping, 
+        # but a fixed small constant works well for Pygame
+        lerp_speed = 0.1 
+
+        # Current camera coordinates
+        current_x = self.camera.x
+        current_y = self.camera.y
+
+        # Interpolate
+        new_x = current_x + (target_x - current_x) * lerp_speed
+        new_y = current_y + (target_y - current_y) * lerp_speed
+
+        self.camera = pygame.Rect(int(new_x), int(new_y), self.width, self.height)

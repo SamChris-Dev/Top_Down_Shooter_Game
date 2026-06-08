@@ -67,6 +67,14 @@ class Game:
             self.shoot_snd = None
             self.hit_snd = None
 
+        self.chars_spritesheet = Spritesheet(ss_img, ss_xml)
+        try:
+            self.zombie_img = pygame.image.load(os.path.join(assets_folder, 'PNG', 'Zombie 1', 'zoimbie1_stand.png')).convert_alpha()
+        except FileNotFoundError:
+            self.zombie_img = pygame.Surface((TILESIZE, TILESIZE))
+            self.zombie_img.fill((255, 0, 0))
+
+
     def build_pathfinding_grid(self):
         self.grid_width = self.map.width // TILESIZE
         self.grid_height = self.map.height // TILESIZE
@@ -89,6 +97,11 @@ class Game:
         self.walls = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
         self.zombies = pygame.sprite.Group()
+        
+        # Initialize Bullet Pool
+        from entities import BulletPool # Make sure to import it at the top
+        self.bullet_pool = BulletPool(self, pool_size=30)
+
         
         for tile_object in self.map.tmxdata.objects:
             if tile_object.name == 'player':

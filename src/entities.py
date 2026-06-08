@@ -213,7 +213,8 @@ class Player(pygame.sprite.Sprite):
         now = pygame.time.get_ticks()
         if now - self.last_shot > BULLET_RATE:
             self.last_shot = now
-            Bullet(self.game, self.rect.centerx, self.rect.centery, self.rot)
+            self.game.bullet_pool.get_bullet(self.rect.centerx, self.rect.centery, self.rot)
+            # Bullet(self.game, self.rect.centerx, self.rect.centery, self.rot)
             if getattr(self.game, 'shoot_snd', None):
                 self.game.shoot_snd.play()
 
@@ -241,6 +242,16 @@ class Bullet(pygame.sprite.Sprite):
         self.vx = math.cos(math.radians(angle)) * BULLET_SPEED
         self.vy = -math.sin(math.radians(angle)) * BULLET_SPEED # Negative because y goes down
         
+        self.spawn_time = pygame.time.get_ticks()
+
+    def fire(self, x, y, angle):
+        self.add(self.groups) # Re-add to sprite groups
+        self.image = pygame.transform.rotate(self.orig_image, angle)
+        self.rect = self.image.get_rect()
+        self.pos = pygame.math.Vector2(x, y)
+        self.rect.center = round(self.pos.x), round(self.pos.y)
+        self.vx = math.cos(math.radians(angle)) * BULLET_SPEED
+        self.vy = -math.sin(math.radians(angle)) * BULLET_SPEED
         self.spawn_time = pygame.time.get_ticks()
 
     def update(self):
@@ -296,6 +307,10 @@ class Zombie(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self, self.groups)
         self.game = game
 
+        # USE CACHED IMAGE
+        self.image = self.game.zombie_img.copy() 
+        self.orig_image = self.image
+
         try:
             self.image = pygame.image.load("assets/PNG/Zombie 1/zoimbie1_stand.png").convert_alpha()
         except FileNotFoundError:
@@ -316,6 +331,33 @@ class Zombie(pygame.sprite.Sprite):
 
         self.path = []
         self.last_path_time = 0
+    
+    def has_line_of_sight(self):
+        # Simple raycast check using distance and steps
+        target_dist = self.game.player.pos - self.pos
+        distance = target_dist.length()
+        
+        if distance == 0:
+            return True
+            
+        direction = target_dist.normalize()
+        step_size = 15 # Check every 15 pixels
+        
+        current_pos = pygame.math.Vector2(self.pos)
+        
+        # March a point forward and check if it hits a wall
+        for _ in range(int(distance / step_size)):
+            current_pos += direction * step_size
+            
+            # Check grid for wall
+            grid_x = int(current_pos.x // TILESIZE)
+            grid_y = int(current_pos.y // TILESIZE)
+            
+            # Ensure within bounds
+            if 0 <= grid_x < self.game.grid_width and 0 <= grid_y < self.game.grid_height:
+                if self.game.pathfinding_grid[grid_y][grid_x] == '1':
+                    return False # Wall blocking view
+        return True
 
     def collide_with_walls(self, dir):
         if dir == 'x':
@@ -339,58 +381,63 @@ class Zombie(pygame.sprite.Sprite):
 
     def update(self):
         now = pygame.time.get_ticks()
-        # Recalculate path every 500ms
-        if now - self.last_path_time > 500 or not self.path:
-            self.last_path_time = now
-            # Get grid positions
-            start_grid = (int(self.pos.x // TILESIZE), int(self.pos.y // TILESIZE))
-            goal_grid = (int(self.game.player.pos.x // TILESIZE), int(self.game.player.pos.y // TILESIZE))
-
-            # Don't pathfind if already in the same cell
-            if start_grid != goal_grid:
-                self.path = get_path(self.game, start_grid, goal_grid)
-            else:
-                self.path = []
-
-        # 1. Pursuit Vector Logic via Waypoints
-        if self.path:
-            # Target is the center of the next tile in the path
-            next_tile = self.path[0]
-            target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
-
-            # If we are close enough to the waypoint, move to the next one
-            if self.pos.distance_to(target_pos) < 15:
-                self.path.pop(0)
-                if self.path:
-                    next_tile = self.path[0]
-                    target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
-                else:
-                    target_pos = self.game.player.pos
-        else:
-            # Fallback to direct pursuit if no path or in same cell
+        
+        # ----------------------------------------
+        # 1. Pathfinding & Target Selection
+        # ----------------------------------------
+        if self.has_line_of_sight():
+            # Clear A* path and run directly at the player
+            self.path = []
             target_pos = self.game.player.pos
+        else:
+            # Only run heavy A* math if blocked AND 500ms have passed
+            if now - self.last_path_time > 500:
+                self.last_path_time = now
+                start_grid = (int(self.pos.x // TILESIZE), int(self.pos.y // TILESIZE))
+                goal_grid = (int(self.game.player.pos.x // TILESIZE), int(self.game.player.pos.y // TILESIZE))
+                
+                if start_grid != goal_grid:
+                    self.path = get_path(self.game, start_grid, goal_grid)
+                else:
+                    self.path = []
 
+            # If an A* path exists, set the target to the next waypoint
+            if self.path:
+                next_tile = self.path[0]
+                target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
+                
+                # If we reached the waypoint, pop it and aim for the next one
+                if self.pos.distance_to(target_pos) < 15:
+                    self.path.pop(0)
+                    if self.path:
+                        next_tile = self.path[0]
+                        target_pos = pygame.math.Vector2(next_tile[0] * TILESIZE + TILESIZE / 2, next_tile[1] * TILESIZE + TILESIZE / 2)
+                    else:
+                        target_pos = self.game.player.pos
+            else:
+                target_pos = self.game.player.pos
+
+        # ----------------------------------------
+        # 2. Rotation & Steering 
+        # ----------------------------------------
         target_dist = target_pos - self.pos
 
-        if target_dist.length_squared() > 0: # Avoid division by zero
-            # 2. Find angle and rotate
-            # We face the actual player to look scarier, even if moving towards a waypoint
+        if target_dist.length_squared() > 0:
+            # Always visually face the player, even if moving sideways to a waypoint
             look_dist = self.game.player.pos - self.pos
             if look_dist.length_squared() > 0:
                 self.rot = math.degrees(math.atan2(-look_dist.y, look_dist.x))
                 self.image = pygame.transform.rotate(self.orig_image, self.rot)
                 self.rect = self.image.get_rect()
 
-            # 3. Steering - Separation from other zombies
+            # Boids algorithm: Separation (push away from other zombies)
             direction = target_dist.normalize()
             for zombie in self.game.zombies:
                 if zombie != self:
                     dist = self.pos - zombie.pos
-                    # If another zombie is within 50 pixels, push away from it
                     if 0 < dist.length() < 50: 
                         direction += dist.normalize()
 
-            # 4. Normalize the combined vector and apply speed
             if direction.length_squared() > 0:
                 self.vel = direction.normalize() * ZOMBIE_SPEED
             else:
@@ -398,18 +445,27 @@ class Zombie(pygame.sprite.Sprite):
         else:
             self.vel = pygame.math.Vector2(0, 0)
 
-        # 5. Apply velocity and handle collisions
+        # ----------------------------------------
+        # 3. Apply Velocity & Handle Physics
+        # ----------------------------------------
         self.pos += self.vel * self.game.dt
 
+        # Resolve X collisions
         self.hit_rect.centerx = round(self.pos.x)
         self.collide_with_walls('x')
 
+        # Resolve Y collisions
         self.hit_rect.centery = round(self.pos.y)
         self.collide_with_walls('y')
 
-        # 5. Lock visual rect to hit_rect
+        # Lock the drawing rectangle to the physics rectangle
         self.rect.center = self.hit_rect.center
 
-        # Check death
+        # ----------------------------------------
+        # 4. Death Check
+        # ----------------------------------------
         if self.health <= 0:
             self.kill()
+    
+    
+        
