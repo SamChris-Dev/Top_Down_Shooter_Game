@@ -1,6 +1,6 @@
 import pygame
 import pytmx
-from settings import *
+from core.settings import *
 
 class TiledMap:
     def __init__(self, filename):
