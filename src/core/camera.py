@@ -24,4 +24,10 @@ class Camera:
         new_x = current_x + (target_x - current_x) * CAMERA_LERP_SPEED
         new_y = current_y + (target_y - current_y) * CAMERA_LERP_SPEED
 
+        # Clamp camera to map boundaries so we never see the grey void
+        new_x = min(0, new_x)  # Left
+        new_y = min(0, new_y)  # Top
+        new_x = max(-(self.width - WIDTH), new_x)  # Right
+        new_y = max(-(self.height - HEIGHT), new_y)  # Bottom
+
         self.camera = pygame.Rect(int(new_x), int(new_y), self.width, self.height)

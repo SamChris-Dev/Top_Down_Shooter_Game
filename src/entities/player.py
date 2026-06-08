@@ -49,11 +49,19 @@ class Player(pygame.sprite.Sprite):
         
         self.vx, self.vy = 0, 0
         self.health = PLAYER_HEALTH
+        self.score = 0
         
         # Invulnerability frames
         self.invulnerable = False
         self.invulnerable_duration = 1000
         self.last_hit_time = 0
+        
+        # Dash mechanic
+        self.is_dashing = False
+        self.dash_speed = PLAYER_RUN_SPEED * 2.5
+        self.dash_duration = 200
+        self.dash_cooldown = 1500
+        self.last_dash_time = 0
         
         # Animation variables
         self.state = 'idle'
@@ -62,9 +70,30 @@ class Player(pygame.sprite.Sprite):
         self.anim_frame = 0
 
     def get_keys(self):
-        self.vx, self.vy = 0, 0
+        now = pygame.time.get_ticks()
         keys = pygame.key.get_pressed()
         
+        # Dash input
+        if keys[pygame.K_SPACE] and now - self.last_dash_time > self.dash_cooldown:
+            self.is_dashing = True
+            self.last_dash_time = now
+            self.invulnerable = True # i-frames during dash
+            
+        if self.is_dashing:
+            if now - self.last_dash_time > self.dash_duration:
+                self.is_dashing = False
+                self.invulnerable = False
+            else:
+                # Keep moving in the current direction at dash speed
+                if self.vx == 0 and self.vy == 0:
+                    self.vx = self.dash_speed # default dash right if no input
+                else:
+                    vec = pygame.math.Vector2(self.vx, self.vy).normalize()
+                    self.vx = vec.x * self.dash_speed
+                    self.vy = vec.y * self.dash_speed
+                return # Skip normal movement input
+
+        self.vx, self.vy = 0, 0
         self.is_running = keys[pygame.K_LSHIFT]
         current_speed = PLAYER_RUN_SPEED if self.is_running else PLAYER_SPEED
         
@@ -80,6 +109,9 @@ class Player(pygame.sprite.Sprite):
         if self.vx != 0 and self.vy != 0:
             self.vx *= 0.7071
             self.vy *= 0.7071
+            
+        if keys[pygame.K_r]:
+            self.current_weapon.reload()
 
     def animate(self):
         now = pygame.time.get_ticks()
@@ -146,6 +178,9 @@ class Player(pygame.sprite.Sprite):
             
         self.get_keys()
         self.animate()
+        
+        # Update current weapon (reloading logic)
+        self.current_weapon.update()
         
         mouse_pos = pygame.mouse.get_pos()
         cam_x = self.game.camera.camera.x

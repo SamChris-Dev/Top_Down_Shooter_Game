@@ -18,7 +18,7 @@ class Menu:
         self.game.screen.fill(BLACK)
         self.draw_text(TITLE, 64, WHITE, WIDTH / 2, HEIGHT / 4, align="center")
         self.draw_text("WASD to move, Mouse to aim/shoot, LSHIFT to sprint", 22, WHITE, WIDTH / 2, HEIGHT / 2, align="center")
-        self.draw_text("Press 'E' to switch weapons", 22, WHITE, WIDTH / 2, HEIGHT / 2 + 40, align="center")
+        self.draw_text("Press 'E' or 'Q' to switch weapons | 'R' to Reload | 'Space' to Dash", 22, WHITE, WIDTH / 2, HEIGHT / 2 + 40, align="center")
         self.draw_text("Press any key to play", 36, YELLOW, WIDTH / 2, HEIGHT * 3 / 4, align="center")
         pygame.display.flip()
         self.wait_for_key()

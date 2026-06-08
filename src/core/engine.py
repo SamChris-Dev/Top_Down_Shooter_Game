@@ -15,9 +15,12 @@ from entities.obstacle import Obstacle
 from entities.bullet import BulletPool
 from systems.pathfinding import FlowField
 from systems.wave_manager import WaveManager
-from systems.effects import screen_shake, spawn_particles
+from systems.effects import screen_shake, spawn_particles, DamageNumber
 from ui.hud import HUD
 from ui.menu import Menu
+from entities.item import ItemDrop
+from entities.obstacle import ExplosiveBarrel
+import random
 
 class Game:
     def __init__(self):
@@ -27,6 +30,12 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
         self.paused = False
+        
+        # Hide mouse for custom crosshair
+        pygame.mouse.set_visible(False)
+        self.crosshair = pygame.Surface((20, 20), pygame.SRCALPHA)
+        pygame.draw.circle(self.crosshair, RED, (10, 10), 8, 2)
+        pygame.draw.circle(self.crosshair, RED, (10, 10), 2)
         
         self.asset_manager = asset_manager
         self.menu = Menu(self)
@@ -64,6 +73,8 @@ class Game:
         self.bullets = pygame.sprite.Group()
         self.zombies = pygame.sprite.Group()
         self.particles = pygame.sprite.Group()
+        self.items = pygame.sprite.Group()
+        self.barrels = pygame.sprite.Group()
         
         self.bullet_pool = BulletPool(self, pool_size=50)
         self.wave_manager = WaveManager(self)
@@ -75,6 +86,8 @@ class Game:
                 Zombie(self, tile_object.x + tile_object.width / 2, tile_object.y + tile_object.height / 2)
             if tile_object.name == 'wall':
                 Obstacle(self, tile_object.x, tile_object.y, tile_object.width, tile_object.height)
+            if tile_object.name == 'barrel':
+                ExplosiveBarrel(self, tile_object.x + tile_object.width / 2, tile_object.y + tile_object.height / 2)
                 
         self.build_pathfinding_grid()
         self.camera = Camera(self.map.width, self.map.height)
@@ -110,15 +123,63 @@ class Game:
         for zombie, bullets in hits.items():
             for bullet in bullets:
                 zombie.health -= bullet.damage
+                DamageNumber(self, zombie.pos.x, zombie.pos.y, bullet.damage, WHITE)
                 bullet.kill()
                 
-                # Blood particles
-                spawn_particles(self, zombie.pos.x, zombie.pos.y, RED, count=10, speed_range=(50, 200))
+                # Points for hitting
+                if hasattr(self, 'player'):
+                    self.player.score += 10
+                
+                # Points and drops for killing
+                if zombie.health <= 0:
+                    if hasattr(self, 'player'):
+                        self.player.score += 50
+                        
+                    # Blood Decal
+                    blood = pygame.Surface((60, 60), pygame.SRCALPHA)
+                    for _ in range(5):
+                        x = random.randint(10, 50)
+                        y = random.randint(10, 50)
+                        r = random.randint(5, 15)
+                        pygame.draw.circle(blood, (150, 0, 0, 180), (x, y), r)
+                    self.map_img.blit(blood, (zombie.pos.x - 30, zombie.pos.y - 30))
+                        
+                    # Trigger death effects
+                    zombie.on_death()
+                        
+                    # Drop item logic
+                    if random.random() < 0.2: # 20% chance to drop
+                        item_type = random.choice(['health', 'ammo'])
+                        ItemDrop(self, zombie.pos.x, zombie.pos.y, item_type)
+                        
+                    zombie.kill()
+                else:
+                    # Blood particles for hit (only if alive)
+                    spawn_particles(self, zombie.pos.x, zombie.pos.y, RED, count=10, speed_range=(50, 200))
                 
                 snd = self.asset_manager.load_sound('audio/hit.wav')
                 from systems.audio import audio_manager
                 if snd:
                     audio_manager.play_sound(snd)
+                    
+        # Bullet - Barrel collisions
+        hits = pygame.sprite.groupcollide(self.barrels, self.bullets, False, True)
+        for barrel, bullets in hits.items():
+            for bullet in bullets:
+                barrel.take_damage(bullet.damage)
+                    
+        # Player - Item collisions
+        if hasattr(self, 'player') and self.player.alive():
+            hits = pygame.sprite.spritecollide(self.player, self.items, False)
+            for hit in hits:
+                if hit.type == 'health' and self.player.health < PLAYER_HEALTH:
+                    self.player.health = min(PLAYER_HEALTH, self.player.health + 25)
+                    hit.kill()
+                elif hit.type == 'ammo':
+                    for weapon in self.player.weapons:
+                        if weapon.name != "Pistol":
+                            weapon.reserve_ammo = min(weapon.max_reserve, weapon.reserve_ammo + weapon.mag_size)
+                    hit.kill()
 
     def draw(self):
         self.screen.fill(BG_COLOR)
@@ -140,6 +201,11 @@ class Game:
             self.screen.blit(sprite.image, sprite_rect)
             
         self.hud.draw()
+        
+        # Draw custom crosshair
+        if not self.paused:
+            mouse_x, mouse_y = pygame.mouse.get_pos()
+            self.screen.blit(self.crosshair, (mouse_x - 10, mouse_y - 10))
         
         if self.paused:
             self.menu.show_pause_screen()

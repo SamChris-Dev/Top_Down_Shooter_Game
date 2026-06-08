@@ -44,7 +44,20 @@ class HUD:
         
         # Weapon Info
         weapon = player.current_weapon
-        self.draw_text(f"Weapon: {weapon.name}", 24, WHITE, 20, 50, align="nw")
+        ammo_text = "Reloading..." if weapon.is_reloading else f"{weapon.current_ammo} / {weapon.reserve_ammo}"
+        if weapon.name == "Pistol" and not weapon.is_reloading:
+             ammo_text = f"{weapon.current_ammo} / \u221E" # Infinity symbol
+        self.draw_text(f"Weapon: {weapon.name}  |  Ammo: {ammo_text}", 24, WHITE, 20, 50, align="nw")
+        
+        # Dash Cooldown Indicator
+        now = pygame.time.get_ticks()
+        dash_ready = now - player.last_dash_time > player.dash_cooldown
+        dash_color = GREEN if dash_ready else RED
+        dash_text = "Dash Ready" if dash_ready else "Dash Cooldown"
+        self.draw_text(f"[{dash_text}]", 20, dash_color, 20, 80, align="nw")
+        
+        # Score
+        self.draw_text(f"Score: {player.score}", 30, YELLOW, WIDTH - 20, 20, align="ne")
         
         # Wave Info
         if hasattr(self.game, 'wave_manager'):

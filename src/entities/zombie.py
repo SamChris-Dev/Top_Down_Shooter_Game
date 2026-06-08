@@ -135,3 +135,45 @@ class Zombie(pygame.sprite.Sprite):
                 self.vel = direction.normalize() * self.base_speed
             else:
                 self.vel = pygame.math.Vector2(0, 0)
+                
+    def on_death(self):
+        pass
+
+class RunnerZombie(Zombie):
+    def __init__(self, game, x, y, health=ZOMBIE_HEALTH, speed=ZOMBIE_SPEED):
+        super().__init__(game, x, y, health * 0.5, speed * 1.5)
+        # Tint green
+        self.orig_image = self.orig_image.copy()
+        self.orig_image.fill((100, 255, 100, 255), special_flags=pygame.BLEND_RGBA_MULT)
+        self.image = self.orig_image.copy()
+
+class TankZombie(Zombie):
+    def __init__(self, game, x, y, health=ZOMBIE_HEALTH, speed=ZOMBIE_SPEED):
+        super().__init__(game, x, y, health * 3.0, speed * 0.5)
+        # Scale up
+        size = self.orig_image.get_size()
+        self.orig_image = pygame.transform.scale(self.orig_image, (int(size[0] * 1.5), int(size[1] * 1.5)))
+        self.image = self.orig_image.copy()
+        self.rect = self.image.get_rect()
+        self.hit_rect = pygame.Rect(0, 0, 50, 50) # Larger hitbox
+        self.hit_rect.center = self.pos
+        self.rect.center = self.hit_rect.center
+
+class BoomerZombie(Zombie):
+    def __init__(self, game, x, y, health=ZOMBIE_HEALTH, speed=ZOMBIE_SPEED):
+        super().__init__(game, x, y, health * 0.8, speed * 0.8)
+        # Tint red
+        self.orig_image = self.orig_image.copy()
+        self.orig_image.fill((255, 100, 100, 255), special_flags=pygame.BLEND_RGBA_MULT)
+        self.image = self.orig_image.copy()
+        
+    def on_death(self):
+        from systems.effects import spawn_particles, screen_shake
+        spawn_particles(self.game, self.pos.x, self.pos.y, RED, count=30, speed_range=(100, 300), size_range=(5, 10))
+        screen_shake.shake(15, 300)
+        
+        # AoE damage to player
+        if hasattr(self.game, 'player') and self.game.player.alive():
+            dist = self.game.player.pos.distance_to(self.pos)
+            if dist < 150: # Explosion radius
+                self.game.player.take_damage(25)

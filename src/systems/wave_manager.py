@@ -62,10 +62,32 @@ class WaveManager:
             if 0 <= grid_x < self.game.grid_width and 0 <= grid_y < self.game.grid_height:
                 if self.game.pathfinding_grid[grid_y][grid_x] == '0':
                     # Safe to spawn
-                    from entities.zombie import Zombie
+                    from entities.zombie import Zombie, RunnerZombie, TankZombie, BoomerZombie
+                    
                     # Scale health/speed based on wave
-                    health = ZOMBIE_HEALTH + (self.current_wave * 10)
-                    speed = ZOMBIE_SPEED + (self.current_wave * 2)
-                    Zombie(self.game, x, y, health, speed)
+                    health_bonus = self.current_wave * 10
+                    speed_bonus = self.current_wave * 2
+                    
+                    # Determine zombie type based on wave
+                    choices = [Zombie]
+                    if self.current_wave >= 2:
+                        choices.append(RunnerZombie)
+                    if self.current_wave >= 3:
+                        choices.append(TankZombie)
+                    if self.current_wave >= 4:
+                        choices.append(BoomerZombie)
+                        
+                    zombie_class = random.choice(choices)
+                    
+                    # Instantiate
+                    if zombie_class == Zombie:
+                        zombie_class(self.game, x, y, ZOMBIE_HEALTH + health_bonus, ZOMBIE_SPEED + speed_bonus)
+                    elif zombie_class == RunnerZombie:
+                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 0.5) + health_bonus, (ZOMBIE_SPEED * 1.5) + speed_bonus)
+                    elif zombie_class == TankZombie:
+                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 3.0) + health_bonus, (ZOMBIE_SPEED * 0.5) + speed_bonus)
+                    elif zombie_class == BoomerZombie:
+                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 0.8) + health_bonus, (ZOMBIE_SPEED * 0.8) + speed_bonus)
+                        
                     self.zombies_to_spawn -= 1
                     break
