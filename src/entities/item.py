@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 from core.settings import *
 
 class ItemDrop(pygame.sprite.Sprite):

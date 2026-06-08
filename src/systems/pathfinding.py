@@ -61,16 +61,23 @@ class FlowField:
                 if self.game.pathfinding_grid[y][x] == '1':
                     continue
 
-                min_cost = float('inf')
+                min_cost = cost_grid[y][x]
                 best_dir = pygame.math.Vector2(0, 0)
 
                 for dx, dy in dirs:
                     nx, ny = x + dx, y + dy
                     if 0 <= nx < self.grid_width and 0 <= ny < self.grid_height:
+                        if self.game.pathfinding_grid[ny][nx] == '1':
+                            continue
+                            
+                        # Diagonal wall check (prevent flowing through corners)
+                        if dx != 0 and dy != 0:
+                            if self.game.pathfinding_grid[y+dy][x] == '1' or self.game.pathfinding_grid[y][x+dx] == '1':
+                                continue
+                                
                         if cost_grid[ny][nx] < min_cost:
                             min_cost = cost_grid[ny][nx]
-                            if dx != 0 or dy != 0:
-                                best_dir = pygame.math.Vector2(dx, dy).normalize()
+                            best_dir = pygame.math.Vector2(dx, dy).normalize()
                 
                 self.flow_grid[y][x] = best_dir
 

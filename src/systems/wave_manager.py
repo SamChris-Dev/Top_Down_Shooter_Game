@@ -50,17 +50,37 @@ class WaveManager:
                 save_manager.update("best_wave", self.current_wave)
 
     def spawn_zombie(self):
-        # Find a valid spawn location outside camera if possible, or random on map
-        # For simplicity, pick a random tile that is not a wall
+        cam = self.game.camera.camera
+        
+        # Calculate visible screen area in world coordinates
+        screen_left = max(0, -cam.x)
+        screen_top = max(0, -cam.y)
+        screen_right = min(self.game.map.width, screen_left + WIDTH)
+        screen_bottom = min(self.game.map.height, screen_top + HEIGHT)
+        
+        attempts = 0
         while True:
-            x = random.randint(0, self.game.map.width)
-            y = random.randint(0, self.game.map.height)
+            attempts += 1
+            if attempts > 100:
+                # Fallback to random map location if we can't find a spot on screen
+                x = random.randint(0, self.game.map.width)
+                y = random.randint(0, self.game.map.height)
+            else:
+                # Pick a random point on screen
+                x = random.randint(int(screen_left), int(screen_right))
+                y = random.randint(int(screen_top), int(screen_bottom))
             
             grid_x = int(x // TILESIZE)
             grid_y = int(y // TILESIZE)
             
             if 0 <= grid_x < self.game.grid_width and 0 <= grid_y < self.game.grid_height:
                 if self.game.pathfinding_grid[grid_y][grid_x] == '0':
+                    # Distance check so they don't spawn exactly on the player
+                    pos = pygame.math.Vector2(x, y)
+                    if hasattr(self.game, 'player') and self.game.player.alive():
+                        if pos.distance_to(self.game.player.pos) < 200 and attempts <= 100:
+                            continue
+                    
                     # Safe to spawn
                     from entities.zombie import Zombie, RunnerZombie, TankZombie, BoomerZombie
                     
@@ -80,14 +100,14 @@ class WaveManager:
                     zombie_class = random.choice(choices)
                     
                     # Instantiate
-                    if zombie_class == Zombie:
-                        zombie_class(self.game, x, y, ZOMBIE_HEALTH + health_bonus, ZOMBIE_SPEED + speed_bonus)
-                    elif zombie_class == RunnerZombie:
-                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 0.5) + health_bonus, (ZOMBIE_SPEED * 1.5) + speed_bonus)
-                    elif zombie_class == TankZombie:
-                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 3.0) + health_bonus, (ZOMBIE_SPEED * 0.5) + speed_bonus)
-                    elif zombie_class == BoomerZombie:
-                        zombie_class(self.game, x, y, (ZOMBIE_HEALTH * 0.8) + health_bonus, (ZOMBIE_SPEED * 0.8) + speed_bonus)
+                    # The subclasses will apply their own multipliers internally based on these base values
+                    zombie = zombie_class(self.game, x, y, ZOMBIE_HEALTH + health_bonus, ZOMBIE_SPEED + speed_bonus)
+                    
+                    # Double check wall collision to prevent getting stuck in walls on spawn
+                    hits = pygame.sprite.spritecollide(zombie, self.game.walls, False)
+                    if hits:
+                        zombie.kill()
+                        continue
                         
                     self.zombies_to_spawn -= 1
                     break

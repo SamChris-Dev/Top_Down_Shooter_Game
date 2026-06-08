@@ -122,19 +122,23 @@ class Zombie(pygame.sprite.Sprite):
     def move_towards(self, target_pos):
         target_dist = target_pos - self.pos
         if target_dist.length_squared() > 0:
-            direction = target_dist.normalize()
+            direction = target_dist.normalize() * 2.0 # Weight the target direction heavily
             
             # Boids algorithm: Separation
             for zombie in self.game.zombies:
                 if zombie != self:
                     dist = self.pos - zombie.pos
-                    if 0 < dist.length() < 50: 
+                    if 0 < dist.length() < 40: 
                         direction += dist.normalize()
 
             if direction.length_squared() > 0:
                 self.vel = direction.normalize() * self.base_speed
             else:
-                self.vel = pygame.math.Vector2(0, 0)
+                # Add a tiny bit of noise to break perfect symmetry lockups
+                import random
+                self.vel = pygame.math.Vector2(random.uniform(-1, 1), random.uniform(-1, 1)).normalize() * self.base_speed
+        else:
+            self.vel = pygame.math.Vector2(0, 0)
                 
     def on_death(self):
         pass
