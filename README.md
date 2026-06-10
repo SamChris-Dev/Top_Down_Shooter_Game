@@ -1,4 +1,6 @@
-# Professional Top-Down Shooter (Python/Pygame)
+# Pro Top-Down Shooter (Python/Pygame)
+
+![Game Preview](Images/Top_Down_Shooter_sample.png)
 
 A fully featured, highly modular Top-Down Shooter built with Python and Pygame. This project was recently refactored from a simple prototype into a professional-grade portfolio piece, demonstrating advanced software engineering principles, game architecture, and performance optimization.
 
@@ -42,6 +44,10 @@ src/
 
 ## 🛠️ Installation & Setup
 
+### 📦 Play Standalone (Windows)
+A compiled, standalone executable is available for download on GitHub under the release tag [v1.0.0](https://github.com/yourusername/Top_Down_Shooter_Game/releases/tag/v1.0.0). No installation of Python or dependencies is required!
+
+### 💻 Run from Source
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/yourusername/Top_Down_Shooter_Game.git
@@ -55,12 +61,6 @@ src/
     ```bash
     python src/main.py
     ```
-4.  **Package into a standalone Windows executable:**
-    ```bash
-    pip install pyinstaller
-    pyinstaller --onefile --noconsole --name "Top_Down_Shooter" --add-data "assets;assets" src/main.py
-    ```
-    The output executable will be created in the `dist/` folder.
 
 ## 🎮 Controls
 *   **W, A, S, D:** Move
