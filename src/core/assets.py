@@ -18,7 +18,11 @@ class AssetManager:
         self.fonts = {}
         self.spritesheets = {}
         
-        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        import sys
+        if getattr(sys, 'frozen', False):
+            self.base_dir = sys._MEIPASS
+        else:
+            self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         self.assets_dir = os.path.join(self.base_dir, 'assets')
 
     def load_image(self, path, key=None, colorkey=None, alpha=True):

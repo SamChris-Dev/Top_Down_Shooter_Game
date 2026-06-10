@@ -3,7 +3,11 @@ import os
 
 class SaveManager:
     def __init__(self, filename="save.json"):
-        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        import sys
+        if getattr(sys, 'frozen', False):
+            self.base_dir = os.path.dirname(sys.executable)
+        else:
+            self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         self.filepath = os.path.join(self.base_dir, filename)
         self.data = {
             "high_score": 0,

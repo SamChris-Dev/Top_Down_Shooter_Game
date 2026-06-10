@@ -55,6 +55,12 @@ src/
     ```bash
     python src/main.py
     ```
+4.  **Package into a standalone Windows executable:**
+    ```bash
+    pip install pyinstaller
+    pyinstaller --onefile --noconsole --name "Top_Down_Shooter" --add-data "assets;assets" src/main.py
+    ```
+    The output executable will be created in the `dist/` folder.
 
 ## 🎮 Controls
 *   **W, A, S, D:** Move
