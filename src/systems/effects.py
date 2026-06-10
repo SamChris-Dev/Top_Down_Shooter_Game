@@ -65,6 +65,41 @@ class DamageNumber(pygame.sprite.Sprite):
             alpha = max(0, 255 - int(255 * ((now - self.spawn_time) / self.lifetime)))
             self.image.set_alpha(alpha)
 
+class BloodSplatter(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+        self._layer = -1  # Draw behind player/zombies
+        self.groups = game.all_sprites
+        pygame.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        
+        # Create blood splatter surface
+        self.image = pygame.Surface((60, 60), pygame.SRCALPHA)
+        for _ in range(5):
+            cx = random.randint(10, 50)
+            cy = random.randint(10, 50)
+            r = random.randint(5, 15)
+            pygame.draw.circle(self.image, (150, 0, 0, 180), (cx, cy), r)
+            
+        self.rect = self.image.get_rect()
+        self.pos = pygame.math.Vector2(x, y)
+        self.rect.center = self.pos
+        
+        self.spawn_time = pygame.time.get_ticks()
+        self.lifetime = 5000  # 5 seconds lifetime
+        self.fade_duration = 1000  # Fade out over 1 second at the end
+
+    def update(self):
+        now = pygame.time.get_ticks()
+        elapsed = now - self.spawn_time
+        
+        if elapsed > self.lifetime:
+            self.kill()
+        elif elapsed > self.lifetime - self.fade_duration:
+            # Fade out
+            fade_elapsed = elapsed - (self.lifetime - self.fade_duration)
+            alpha = max(0, 255 - int(255 * (fade_elapsed / self.fade_duration)))
+            self.image.set_alpha(alpha)
+
 class ScreenShake:
     def __init__(self):
         self.intensity = 0

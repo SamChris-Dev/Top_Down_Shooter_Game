@@ -110,20 +110,24 @@ class Player(pygame.sprite.Sprite):
             self.vx *= 0.7071
             self.vy *= 0.7071
             
-        if keys[pygame.K_r]:
+        if keys[pygame.K_c]:
             self.current_weapon.reload()
 
     def animate(self):
         now = pygame.time.get_ticks()
         
-        if now - self.current_weapon.last_shot < 100:
+        if self.current_weapon.is_reloading:
+            self.state = 'reloading'
+        elif now - self.current_weapon.last_shot < 100:
             self.state = 'shooting'
         elif self.vx != 0 or self.vy != 0:
             self.state = 'running' if self.is_running else 'moving'
         else:
             self.state = 'idle'
             
-        if self.state == 'shooting':
+        if self.state == 'reloading':
+            self.orig_image = self.frames['reload']
+        elif self.state == 'shooting':
             self.orig_image = self.frames['machine']
         elif self.state == 'idle':
             self.orig_image = self.frames['gun']
@@ -167,6 +171,11 @@ class Player(pygame.sprite.Sprite):
                 audio_manager.play_sound(snd)
                 
             if self.health <= 0:
+                # Update high score in save manager
+                from systems.save_manager import save_manager
+                high_score = save_manager.get("high_score", 0)
+                if self.score > high_score:
+                    save_manager.update("high_score", self.score)
                 self.game.playing = False
 
     def update(self):

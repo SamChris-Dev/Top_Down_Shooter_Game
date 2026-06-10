@@ -5,12 +5,12 @@ A fully featured, highly modular Top-Down Shooter built with Python and Pygame. 
 ## 🚀 Features
 
 *   **Robust Game Architecture:** Fully modular design separating Core Engine, Entities, Systems (Collision, Pathfinding, Audio), and UI into distinct packages.
-*   **Finite State Machine (FSM) AI:** Enemies utilize an FSM (Idle, Chase, Attack) coupled with A* Pathfinding and Boids separation algorithms for intelligent swarming behavior.
-*   **Extensible Weapon System:** Abstract Weapon class with derived types (Pistol, Shotgun, SMG, Assault Rifle, Sniper Rifle) supporting variable fire rates, spread, and damage. Object-pooled bullets for high performance.
-*   **Dynamic Wave Manager:** Progressive difficulty scaling with dynamic enemy spawning per wave.
-*   **Performance Optimization:** Centralized Asset Manager caches all images, sounds, fonts, and spritesheets, completely eliminating mid-loop I/O bottlenecks. Fixed timestep/Delta Time movement for 60+ FPS stability.
-*   **Polished UI/UX & Juiciness:** Health bars, wave tracking, screen shake on damage/shooting, particle systems for bullet impacts, and damage i-frames with visual flashing.
-*   **Persistent Saving:** JSON-based save management for High Scores, Best Wave, and Audio Settings.
+*   **Finite State Machine (FSM) AI:** Enemies utilize an FSM (Idle, Chase, Attack) coupled with Flow Field Pathfinding and Boids separation algorithms for intelligent swarming behavior.
+*   **Extensible Weapon System:** Abstract Weapon class with derived types (Pistol, Shotgun, SMG, Assault Rifle, Sniper Rifle) supporting variable fire rates, spread, and damage. Object-pooled and asset-cached bullets for high performance.
+*   **Dynamic Wave Manager:** Progressive difficulty scaling with dynamic, off-screen enemy spawning just outside the camera viewport boundaries.
+*   **Performance Optimization:** Centralized Asset Manager caches all images, sounds, fonts, and spritesheets, completely eliminating mid-loop I/O bottlenecks. Boids separation optimization uses squared-distance checks to skip square roots. Fixed timestep/Delta Time movement for 60+ FPS stability.
+*   **Polished UI/UX & Juiciness:** Health bars, reload sprites, wave tracking, screen shake, blood splatters that fade out over time, milestone achievements, particle systems, and damage i-frames with visual flashing.
+*   **Persistent Saving:** JSON-based save management for High Scores, Best Wave, Lifetime Kills, and Audio Settings.
 
 ## 📁 Architecture Overview
 
@@ -61,16 +61,20 @@ src/
 *   **Left Shift:** Sprint
 *   **Mouse Cursor:** Aim
 *   **Left Mouse Click:** Shoot (Hold for automatic weapons)
-*   **Q / E:** Cycle Weapons
+*   **Caps Lock / E:** Cycle Weapons
+*   **C:** Reload
+*   **Space:** Dash
 *   **ESC:** Pause Game
 
 ## 💡 Engineering Highlights for Code Reviewers
 
 This project adheres to **SOLID** principles where applicable in game development:
-*   **Single Responsibility:** `entities.py` was dismantled; collision, pathfinding, and drawing logic are decoupled.
+*   **Single Responsibility:** Collision, pathfinding, and drawing logic are decoupled from entity classes.
 *   **Open/Closed:** The Weapon and System architectures allow new weapons or systems to be added without modifying core loops.
-*   **Resource Management:** The `BulletPool` reduces garbage collection overhead by reusing bullet instances. The `AssetManager` ensures expensive I/O operations happen only once.
+*   **Resource Management:** The `BulletPool` reduces garbage collection overhead by reusing bullet instances. The `AssetManager` ensures expensive I/O operations happen only once (including bullet texture loads).
 *   **Resilience:** The Save and Audio managers feature robust `try/except` fallback mechanisms, preventing crashes if files are missing or hardware is unavailable.
+*   **Swarm Algorithm Optimization:** Optimized the FSM swarm separation loop using `length_squared()` checks before calculating actual normal vectors, reducing computational overhead by bypassing square root calculations for all non-adjacent entities.
+*   **Decal Memory Management:** Transient blood splatters are instantiated as low-layer sprites (`_layer = -1`) and fade out dynamically to prevent map texture clutter and memory bloat over long play sessions.
 
 ## 🔜 Future Roadmap
 *   Boss fights with complex behavior trees.

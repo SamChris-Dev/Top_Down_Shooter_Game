@@ -70,4 +70,6 @@ class HUD:
         # Score/Kills (if implemented)
         from systems.save_manager import save_manager
         best_wave = save_manager.get("best_wave", 1)
-        self.draw_text(f"Best Wave: {best_wave}", 24, LIGHT_GRAY, WIDTH - 20, 60, align="ne")
+        high_score = save_manager.get("high_score", 0)
+        self.draw_text(f"High Score: {high_score}", 24, LIGHT_GRAY, WIDTH - 20, 60, align="ne")
+        self.draw_text(f"Best Wave: {best_wave}", 24, LIGHT_GRAY, WIDTH - 20, 90, align="ne")

@@ -128,8 +128,9 @@ class Zombie(pygame.sprite.Sprite):
             for zombie in self.game.zombies:
                 if zombie != self:
                     dist = self.pos - zombie.pos
-                    if 0 < dist.length() < 40: 
-                        direction += dist.normalize()
+                    dist_sq = dist.length_squared()
+                    if 0 < dist_sq < 1600: # 40^2 = 1600
+                        direction += dist / math.sqrt(dist_sq)
 
             if direction.length_squared() > 0:
                 self.vel = direction.normalize() * self.base_speed

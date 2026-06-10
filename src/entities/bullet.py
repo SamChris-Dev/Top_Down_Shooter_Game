@@ -11,12 +11,9 @@ class Bullet(pygame.sprite.Sprite):
         self.speed = speed
         self.lifetime = lifetime
         
-        try:
-            self.orig_image = pygame.image.load("assets/PNG/weapon_silencer.png").convert_alpha()
-            self.orig_image.fill((255, 200, 0, 255), special_flags=pygame.BLEND_RGBA_MULT)
-        except FileNotFoundError:
-            self.orig_image = pygame.Surface((15, 5), pygame.SRCALPHA)
-            self.orig_image.fill((255, 255, 0))
+        img = game.asset_manager.load_image("PNG/weapon_silencer.png")
+        self.orig_image = img.copy()
+        self.orig_image.fill((255, 200, 0, 255), special_flags=pygame.BLEND_RGBA_MULT)
             
         self.image = pygame.transform.rotate(self.orig_image, angle)
         self.rect = self.image.get_rect()

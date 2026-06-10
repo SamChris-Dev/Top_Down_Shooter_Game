@@ -18,7 +18,7 @@ class Menu:
         self.game.screen.fill(BLACK)
         self.draw_text(TITLE, 64, WHITE, WIDTH / 2, HEIGHT / 4, align="center")
         self.draw_text("WASD to move, Mouse to aim/shoot, LSHIFT to sprint", 22, WHITE, WIDTH / 2, HEIGHT / 2, align="center")
-        self.draw_text("Press 'E' or 'Q' to switch weapons | 'R' to Reload | 'Space' to Dash", 22, WHITE, WIDTH / 2, HEIGHT / 2 + 40, align="center")
+        self.draw_text("Press 'E' or 'CAPS LOCK' to switch weapons | 'C' to Reload | 'Space' to Dash", 22, WHITE, WIDTH / 2, HEIGHT / 2 + 40, align="center")
         self.draw_text("Press any key to play", 36, YELLOW, WIDTH / 2, HEIGHT * 3 / 4, align="center")
         pygame.display.flip()
         self.wait_for_key()
@@ -32,11 +32,18 @@ class Menu:
         
         from systems.save_manager import save_manager
         wave = self.game.wave_manager.current_wave if hasattr(self.game, 'wave_manager') else 1
-        best = save_manager.get("best_wave", 1)
+        best_wave = save_manager.get("best_wave", 1)
         
-        self.draw_text(f"You reached Wave {wave}", 30, WHITE, WIDTH / 2, HEIGHT / 2, align="center")
-        if wave >= best:
-            self.draw_text("NEW BEST!", 30, YELLOW, WIDTH / 2, HEIGHT / 2 + 40, align="center")
+        score = self.game.player.score if hasattr(self.game, 'player') else 0
+        best_score = save_manager.get("high_score", 0)
+        
+        self.draw_text(f"Score: {score}  (Best: {best_score})", 30, WHITE, WIDTH / 2, HEIGHT / 2 - 40, align="center")
+        self.draw_text(f"You reached Wave {wave}  (Best: {best_wave})", 24, WHITE, WIDTH / 2, HEIGHT / 2 + 10, align="center")
+        
+        if score >= best_score and score > 0:
+            self.draw_text("NEW HIGH SCORE!", 30, YELLOW, WIDTH / 2, HEIGHT / 2 + 60, align="center")
+        elif wave >= best_wave:
+            self.draw_text("NEW BEST WAVE!", 30, YELLOW, WIDTH / 2, HEIGHT / 2 + 60, align="center")
             
         self.draw_text("Press any key to restart", 36, WHITE, WIDTH / 2, HEIGHT * 3 / 4, align="center")
         pygame.display.flip()

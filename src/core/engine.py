@@ -134,15 +134,13 @@ class Game:
                 if zombie.health <= 0:
                     if hasattr(self, 'player'):
                         self.player.score += 50
+                        # Increment kills in save manager
+                        from systems.save_manager import save_manager
+                        save_manager.update("kills", save_manager.get("kills", 0) + 1)
                         
-                    # Blood Decal
-                    blood = pygame.Surface((60, 60), pygame.SRCALPHA)
-                    for _ in range(5):
-                        x = random.randint(10, 50)
-                        y = random.randint(10, 50)
-                        r = random.randint(5, 15)
-                        pygame.draw.circle(blood, (150, 0, 0, 180), (x, y), r)
-                    self.map_img.blit(blood, (zombie.pos.x - 30, zombie.pos.y - 30))
+                    # Blood Splatter (disappears over time)
+                    from systems.effects import BloodSplatter
+                    BloodSplatter(self, zombie.pos.x, zombie.pos.y)
                         
                     # Trigger death effects
                     zombie.on_death()
@@ -221,7 +219,7 @@ class Game:
                     self.paused = not self.paused
                 if event.key == pygame.K_e and hasattr(self, 'player') and not self.paused:
                     self.player.switch_weapon(1)
-                if event.key == pygame.K_q and hasattr(self, 'player') and not self.paused:
+                if event.key == pygame.K_CAPSLOCK and hasattr(self, 'player') and not self.paused:
                     self.player.switch_weapon(-1)
             
             # Continuous shooting

@@ -62,13 +62,30 @@ class WaveManager:
         while True:
             attempts += 1
             if attempts > 100:
-                # Fallback to random map location if we can't find a spot on screen
+                # Fallback to random map location if we can't find a spot
                 x = random.randint(0, self.game.map.width)
                 y = random.randint(0, self.game.map.height)
             else:
-                # Pick a random point on screen
-                x = random.randint(int(screen_left), int(screen_right))
-                y = random.randint(int(screen_top), int(screen_bottom))
+                # Spawn off-screen but near viewport bounds (64 to 160 pixels outside)
+                border = random.choice(['left', 'right', 'top', 'bottom'])
+                spawn_offset = random.randint(64, 160)
+                
+                if border == 'left':
+                    x = screen_left - spawn_offset
+                    y = random.randint(int(screen_top), int(screen_bottom))
+                elif border == 'right':
+                    x = screen_right + spawn_offset
+                    y = random.randint(int(screen_top), int(screen_bottom))
+                elif border == 'top':
+                    x = random.randint(int(screen_left), int(screen_right))
+                    y = screen_top - spawn_offset
+                else:
+                    x = random.randint(int(screen_left), int(screen_right))
+                    y = screen_bottom + spawn_offset
+                    
+                # Clamp inside map bounds
+                x = max(0, min(self.game.map.width, x))
+                y = max(0, min(self.game.map.height, y))
             
             grid_x = int(x // TILESIZE)
             grid_y = int(y // TILESIZE)
