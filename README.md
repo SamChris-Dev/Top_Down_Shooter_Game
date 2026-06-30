@@ -1,6 +1,9 @@
 # Pro Top-Down Shooter (Python/Pygame)
 
-![Game Preview](Images/Top_Down_Shooter_sample.png)
+<p align="center">
+  <img src="Images/Top_Down_Shooter_sample.png" alt="Game Preview" width="500" />
+</p>
+
 
 A fully featured, highly modular Top-Down Shooter built with Python and Pygame. This project was recently refactored from a simple prototype into a professional-grade portfolio piece, demonstrating advanced software engineering principles, game architecture, and performance optimization.
 
